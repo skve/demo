@@ -1,18 +1,13 @@
 "use client";
 
-import { motion, Transition, Variants } from "motion/react";
-
-const containerTransition: Transition = {
-  delay: 0.5,
-  duration: 1,
-  ease: [0.25, 0.1, 0.25, 1],
-};
+import { motion,  Variants } from "motion/react";
 
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
     transition: {
+      duration: 1,
       staggerChildren: 0.2, // Stagger delay between children
     },
   },
@@ -38,7 +33,7 @@ export function IntroTitle() {
       initial="hidden"
       animate="visible"
       variants={containerVariants}
-      transition={containerTransition}
+      // transition={containerTransition}
     >
       <motion.h1 className="text-4xl text-gray-12" variants={childVariants}>
         Luke Shiels
