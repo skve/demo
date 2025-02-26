@@ -1,3 +1,5 @@
+@import "@radix-ui/colors/black-alpha.css" layer(base);
+
 @import "@radix-ui/colors/gray.css" layer(base);
 @import "@radix-ui/colors/gray-alpha.css" layer(base);
 @import "@radix-ui/colors/gray-dark.css" layer(base);
@@ -5,21 +7,6 @@
 
 @import "@radix-ui/colors/pink.css" layer(base);
 @import "@radix-ui/colors/pink-dark.css" layer(base);
-
-@import "@radix-ui/colors/blue.css" layer(base);
-@import "@radix-ui/colors/blue-dark.css" layer(base);
-
-@import "@radix-ui/colors/green.css" layer(base);
-@import "@radix-ui/colors/green-dark.css" layer(base);
-
-@import "@radix-ui/colors/yellow.css" layer(base);
-@import "@radix-ui/colors/yellow-dark.css" layer(base);
-
-@import "@radix-ui/colors/orange.css" layer(base);
-@import "@radix-ui/colors/orange-dark.css" layer(base);
-
-@import "@radix-ui/colors/tomato.css" layer(base);
-@import "@radix-ui/colors/tomato-dark.css" layer(base);
 
 @import "tailwindcss";
 
@@ -40,18 +27,31 @@
   --color-gray-11: var(--gray-11);
   --color-gray-12: var(--gray-12);
 
-  --color-gray-a-1: var(--gray-a1);
-  --color-gray-a-2: var(--gray-a2);
-  --color-gray-a-3: var(--gray-a3);
-  --color-gray-a-4: var(--gray-a4);
-  --color-gray-a-5: var(--gray-a5);
-  --color-gray-a-6: var(--gray-a6);
-  --color-gray-a-7: var(--gray-a7);
-  --color-gray-a-8: var(--gray-a8);
-  --color-gray-a-9: var(--gray-a9);
-  --color-gray-a-10: var(--gray-a10);
-  --color-gray-a-11: var(--gray-a11);
-  --color-gray-a-12: var(--gray-a12);
+  --color-gray-a1: var(--gray-a1);
+  --color-gray-a2: var(--gray-a2);
+  --color-gray-a3: var(--gray-a3);
+  --color-gray-a4: var(--gray-a4);
+  --color-gray-a5: var(--gray-a5);
+  --color-gray-a6: var(--gray-a6);
+  --color-gray-a7: var(--gray-a7);
+  --color-gray-a8: var(--gray-a8);
+  --color-gray-a9: var(--gray-a9);
+  --color-gray-a10: var(--gray-a10);
+  --color-gray-a11: var(--gray-a11);
+  --color-gray-a12: var(--gray-a12);
+
+  --color-black-a1: var(--black-a1);
+  --color-black-a2: var(--black-a2);
+  --color-black-a3: var(--black-a3);
+  --color-black-a4: var(--black-a4);
+  --color-black-a5: var(--black-a5);
+  --color-black-a6: var(--black-a6);
+  --color-black-a7: var(--black-a7);
+  --color-black-a8: var(--black-a8);
+  --color-black-a9: var(--black-a9);
+  --color-black-a10: var(--black-a10);
+  --color-black-a11: var(--black-a11);
+  --color-black-a12: var(--black-a12);
 
   --color-pink-1: var(--pink-1);
   --color-pink-2: var(--pink-2);
@@ -66,22 +66,26 @@
   --color-pink-11: var(--pink-11);
   --color-pink-12: var(--pink-12);
 
-  --color-orange-1: var(--orange-1);
-  --color-orange-2: var(--orange-2);
-  --color-orange-3: var(--orange-3);
-  --color-orange-4: var(--orange-4);
-  --color-orange-5: var(--orange-5);
-  --color-orange-6: var(--orange-6);
-  --color-orange-7: var(--orange-7);
-  --color-orange-8: var(--orange-8);
-  --color-orange-9: var(--orange-9);
-  --color-orange-10: var(--orange-10);
-  --color-orange-11: var(--orange-11);
-  --color-orange-12: var(--orange-12);
-
   --font-*: initial;
   --font-mono: var(--font-geist-mono);
   --font-sans: var(--font-geist-sans);
+
+  --shadow-*: initial;
+  --shadow-1: inset 0 0 0 1px var(--gray-a5), inset 0 1.5px 2px 0 var(--gray-a2),
+    inset 0 1.5px 2px 0 var(--black-a2);
+  --shadow-2: 0 0 0 1px color-mix(in oklab, var(--gray-a3), var(--gray-3) 25%),
+    0 0 0 0.5px var(--black-a1), 0 1px 1px 0 var(--gray-a2),
+    0 2px 1px -1px var(--black-a1), 0 1px 3px 0 var(--black-a1);
+  --shadow-3: 0 0 0 1px color-mix(in oklab, var(--gray-a3), var(--gray-3) 25%),
+    0 2px 3px -2px var(--gray-a3), 0 3px 12px -4px var(--black-a2),
+    0 4px 16px -8px var(--black-a2);
+  --shadow-4: 0 0 0 1px color-mix(in oklab, var(--gray-a3), var(--gray-3) 25%),
+    0 8px 40px var(--black-a1), 0 12px 32px -16px var(--gray-a3);
+  --shadow-5: 0 0 0 1px color-mix(in oklab, var(--gray-a3), var(--gray-3) 25%),
+    0 12px 60px var(--black-a3), 0 12px 32px -16px var(--gray-a5);
+  --shadow-6: 0 0 0 1px color-mix(in oklab, var(--gray-a3), var(--gray-3) 25%),
+    0 12px 60px var(--black-a3), 0 16px 64px var(--gray-a2),
+    0 16px 36px -20px var(--gray-a7);
 }
 
 @layer base {
