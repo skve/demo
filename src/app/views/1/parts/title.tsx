@@ -7,8 +7,10 @@ const containerVariants: Variants = {
   visible: {
     opacity: 1,
     transition: {
-      duration: 1,
-      staggerChildren: 0.2, // Stagger delay between children
+      delay: 1,          // Wait 2 seconds before starting the container animation
+      duration: 1,       // Fade in the container over 1 second
+      when: "beforeChildren", // Children won't start animating until the container finishes
+      staggerChildren: 0.2,   // Stagger the delays for each child
     },
   },
 };
