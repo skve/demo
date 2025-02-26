@@ -33,7 +33,7 @@ export function SlideResize({ children }: { children: React.ReactNode }) {
 
   return (
     <div
-      className="w-full p-32 h-full flex"
+      className="w-full p-32  h-full flex"
       // ref={resizeRef}
     >
       {children}

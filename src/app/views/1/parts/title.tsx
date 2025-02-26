@@ -36,10 +36,10 @@ export function IntroTitle() {
       animate="visible"
       variants={containerVariants}
     >
-      <motion.h1 className="text-4xl text-gray-12" variants={childVariants}>
+      <motion.h1 className="text-4xl text-gray-12 tracking-[-0.035em]" variants={childVariants}>
         Luke Shiels
       </motion.h1>
-      <motion.h2 className="text-3xl text-gray-11" variants={childVariants}>
+      <motion.h2 className="text-3xl text-gray-11 tracking-[-0.03em]" variants={childVariants}>
         Selected Works
       </motion.h2>
     </motion.hgroup>
