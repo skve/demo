@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@mantine/hooks": "^7.17.0",
     "@radix-ui/colors": "^3.0.0",
     "@tailwindcss/postcss": "^4.0.9",
     "clsx": "^2.1.1",
