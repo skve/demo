@@ -10,6 +10,19 @@ const variants: Variants = {
   visible: { opacity: 1 },
 };
 
+const sheriffVariants: Variants = {
+  hidden: { opacity: 0, y: 5, filter: "blur(10px)" },
+  visible: {
+    opacity: 1,
+    y: 0,
+    filter: "blur(0px)",
+    transition: {
+      duration: 0.3,
+      ease: [0.25, 0.1, 0.25, 1],
+    },
+  },
+};
+
 export function SlideSheriff() {
   const { width, height } = useViewport();
 
@@ -32,11 +45,19 @@ export function SlideSheriff() {
         initial="hidden"
         exit="hidden"
         animate={isTooSmall ? "visible" : "hidden"}
-        className="absolute shadow-2 text-gray-12 z-50 bg-black-a3 dark:bg-black-a3 ring ring-gray-6 dark:ring-gray-4 rounded-lg inset-4 backdrop-blur-xl flex justify-center items-center"
+        className="absolute shadow-2 text-gray-12 z-50 bg-black-a3 dark:bg-black-a3 inset-0 ring-gray-6 dark:ring-gray-4 backdrop-blur-xl flex justify-center items-center"
       >
-        <div className="capitalize flex items-center bg-gray-1 rounded px-2.5 ring ring-gray-4 py-1.5 font-medium text-gray-12 shadow-2 gap-2">
-          Your browser window is too small
-        </div>
+        {isTooSmall && (
+          <motion.div
+            key="sheriff-message"
+            variants={sheriffVariants}
+            initial="hidden"
+            animate="visible"
+            className="capitalize  flex items-center bg-gray-2 rounded-lg px-4 ring ring-gray-4 py-2 font-medium text-gray-12 shadow-2 gap-2"
+          >
+            Your browser window is too small
+          </motion.div>
+        )}
       </motion.div>
     </AnimatePresence>
   );
