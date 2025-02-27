@@ -128,7 +128,7 @@ export function SlideConstraint({
           className="bg-black-a4 backdrop-blur-md z-50 inset-0 absolute w-full h-full flex justify-center items-center"
         >
           <motion.button
-            whileTap={{ scale: 0.9 }}
+            whileTap={{ scale: 0.92 }}
             transition={buttonTransition}
             onClick={handleStart}
             variants={buttonVariants}
