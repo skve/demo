@@ -125,7 +125,10 @@ export function SlideConstraint({
           initial="initial"
           transition={buttonContainerTransition}
           animate={isStarted ? "animate" : "initial"}
-          className="bg-black-a4 backdrop-blur-md z-50 inset-0 absolute w-full h-full flex justify-center items-center"
+          className={cn(
+            "bg-black-a4 backdrop-blur-md z-50 inset-0 absolute w-full h-full flex justify-center items-center",
+            isStarted && "pointer-events-none"
+          )}
         >
           <motion.button
             whileTap={{ scale: 0.92 }}
