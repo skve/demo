@@ -1,10 +1,15 @@
 "use client";
 
-import { cn } from "@/lib/utils";
-import { SlideSheriff } from "./slide-sheriff";
 import { AnimatePresence, motion, Transition, Variants } from "motion/react";
 import { useState } from "react";
+
+import { SlideSheriff } from "./slide-sheriff";
 import { PlayIcon } from "./parts/play-icon";
+
+import { cn } from "@/lib/utils";
+
+const buttonDuration = 0.3;
+
 const containerVariants: Variants = {
   initial: {
     borderRadius: "2rem",
@@ -27,7 +32,6 @@ const buttonVariants: Variants = {
   },
 };
 
-const buttonDuration = 0.3;
 
 const buttonTransition: Transition = {
   duration: buttonDuration,
@@ -93,7 +97,7 @@ export function SlideConstraint({
 
         <SlideSheriff />
 
-        {children}
+        {isStarted ? children : null}
       </motion.div>
     </AnimatePresence>
   );
