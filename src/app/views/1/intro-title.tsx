@@ -31,7 +31,7 @@ const childVariants: Variants = {
 export function IntroTitle() {
   return (
     <motion.hgroup
-      className="font-medium mt-auto space-y-1.5 tracking-tight"
+      className="font-medium m-32 mt-auto space-y-1.5 tracking-tight"
       initial="hidden"
       animate="visible"
       variants={containerVariants}

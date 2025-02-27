@@ -119,7 +119,7 @@ export function SlideConstraint({
         animate={isStarted ? "animate" : "initial"}
         transition={transition}
         className={cn(
-          "shadow-4 flex p-32 relative overflow-hidden bg-gray-1 h-auto ring ring-gray-3 w-full max-h-dvh aspect-video",
+          "shadow-4 flex relative overflow-hidden bg-gray-1 h-auto ring ring-gray-3 w-full max-h-dvh aspect-video",
           className
         )}
       >
@@ -162,7 +162,7 @@ export function SlideConstraint({
         <AnimatePresence initial={false} mode="popLayout">
           {isStarted ? (
             <motion.div
-              className="flex  origin-center w-full"
+              className="flex origin-center w-full"
               initial={{ opacity: 0, scale: 0.96, filter: "blu3ppx)" }}
               animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
               exit={{ opacity: 0, scale: 0.96, filter: "blur(3px)" }}
