@@ -61,19 +61,21 @@ const buttonContainerTransition: Transition = {
 const buttonTransition: Transition = {
   ...transitionBasis,
 
-  duration: buttonDuration,
+  // duration: buttonDuration,
   ease: "easeOut",
 };
 
 const transition: Transition = {
   ...transitionBasis,
+  type: "spring",
 
   when: "beforeChildren",
   delay: buttonDuration,
   ease: "easeInOut",
-  duration: 1.2,
+  duration: 1,
+  // bounce: 0,
 
-  stiffness: 200,
+  // stiffness: 200,
 };
 
 export function SlideConstraint({
@@ -98,7 +100,10 @@ export function SlideConstraint({
     [
       "p",
       () => {
-        if (isStarted) return;
+        if (isStarted) {
+          setIsStarted(false);
+          return;
+        }
 
         setPublishHotkeyPress(true);
 
@@ -119,7 +124,8 @@ export function SlideConstraint({
         animate={isStarted ? "animate" : "initial"}
         transition={transition}
         className={cn(
-          "shadow-4 flex relative overflow-hidden bg-gray-1 h-auto ring ring-gray-3 w-full max-h-dvh aspect-video",
+          "shadow-4 flex relative overflow-hidden bg-gray-1 h-auto ring ring-gray-3 w-full max-h-dvh",
+          !isStarted ? "aspect-video" : "h-full",
           className
         )}
       >
@@ -129,7 +135,7 @@ export function SlideConstraint({
           transition={buttonContainerTransition}
           animate={isStarted ? "animate" : "initial"}
           className={cn(
-            "bg-black-a4 backdrop-blur-md z-50 inset-0 absolute w-full h-full flex justify-center items-center",
+            "bg-black-a4 fle backdrop-blur-md z-50 inset-0 absolute w-full h-full flex justify-center items-center",
             isStarted && "pointer-events-none"
           )}
         >
@@ -143,7 +149,7 @@ export function SlideConstraint({
               isStarted
                 ? "animate"
                 : publishHotkeyPress
-                ? { scale: 0.9 }
+                ? { scale: 0.92 }
                 : "initial"
             }
             className="bg-gray-3 hover:bg-gray-4 hover:[&>kbd]:bg-gray-7 focus:outline-0 h-10 focus-visible:ring-2 focus-visible:ring-pink-7 focus-visible:ring-offset-4 focus-visible:ring-offset-gray-1 text-gray-12 flex gap-1.5 items-center justify-center transition-colors duration-200 rounded-lg px-4 py-1.5 shadow-3"
@@ -162,14 +168,15 @@ export function SlideConstraint({
         <AnimatePresence initial={false} mode="popLayout">
           {isStarted ? (
             <motion.div
-              className="flex origin-center w-full"
+              className="flex origin-bottom w-full"
               initial={{ opacity: 0, scale: 0.96, filter: "blu3ppx)" }}
               animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
               exit={{ opacity: 0, scale: 0.96, filter: "blur(3px)" }}
               key={pathname}
               transition={{
-                duration: 0.2,
-                ease: "easeInOut",
+                delay: 0.5,
+                duration: 0.5,
+                ease: "easeOut",
               }}
             >
               {children}
