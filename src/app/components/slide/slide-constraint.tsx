@@ -83,14 +83,15 @@ export function SlideConstraint({
           initial="initial"
           transition={buttonTransition}
           animate={isStarted ? "animate" : "initial"}
-          className="bg-black-a4 backdrop-blur-md z-50 inset-0 absolute w-full h-full flex justify-center items-center"
+          className="bg-black-a4  backdrop-blur-md z-50 inset-0 absolute w-full h-full flex justify-center items-center"
         >
           <motion.button
             whileTap={{ scale: 0.9 }}
             onClick={handleStart}
-            className="bg-gray-3 focus:outline-0 focus-visible:ring-2 focus-visible:ring-pink-7 focus-visible:ring-offset-4 focus-visible:ring-offset-gray-1 hover:bg-gray-4 flex items-center justify-center text-gray-10 hover:text-gray-11 transition-colors duration-200 rounded-full px-2.5 py-1.5 size-32 shadow-3"
+            className="bg-gray-3 focus:outline-0 h-10 focus-visible:ring-2 focus-visible:ring-pink-7 focus-visible:ring-offset-4 focus-visible:ring-offset-gray-1 hover:bg-gray-2 flex gap-1.5 items-center justify-center text-gray-12 transition-colors duration-200 rounded-lg px-4 py-1.5 shadow-3"
           >
-            <PlayIcon className="size-14" />
+            <PlayIcon className="size-4 flex-none" />
+            <span className="text-base font-medium pl-1">Start demo</span>
           </motion.button>
         </motion.div>
 
