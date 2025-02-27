@@ -10,7 +10,7 @@ export function GridItem({
   return (
     <div
       className={cn(
-        "bg-gray-3 rounded-3xl relative flex items-center justify-center overflow-hidden",
+        "bg-gray-3 ring ring-gray-4 rounded-3xl relative flex items-center justify-center overflow-hidden",
         className
       )}
     >
