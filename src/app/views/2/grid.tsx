@@ -8,7 +8,7 @@ export function Grid({ children }: { children: React.ReactNode }) {
   const REM = 16;
 
   const BREAKPOINT = 40;
-  const ROW_HEIGHT = 12;
+  const ROW_HEIGHT = 20;
 
   useEffect(() => {
     const handleResize = () => {
@@ -51,7 +51,7 @@ export function Grid({ children }: { children: React.ReactNode }) {
         gridTemplateColumns: `repeat(auto-fit, minmax(${ROW_HEIGHT}rem, 1fr))`,
         gridAutoRows: `${ROW_HEIGHT}rem`,
       }}
-      className={`grid w-full grid-flow-dense gap-3`}
+      className="grid w-full grid-flow-dense gap-3"
     >
       {children}
     </div>
