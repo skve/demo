@@ -2,13 +2,13 @@ import { cn } from "@/lib/utils";
 import { motion, Variants } from "motion/react";
 
 const childVariants: Variants = {
-  hidden: { opacity: 0, y: "10%", filter: "blur(10px)" },
+  hidden: { opacity: 0, y: "5%", filter: "blur(5px)" },
   visible: {
     opacity: 1,
     y: 0,
     filter: "blur(0px)",
     transition: {
-      duration: 0.8,
+      duration: 0.6,
       ease: [0.25, 0.1, 0.25, 1],
     },
   },

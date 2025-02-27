@@ -8,10 +8,10 @@ const containerVariants: Variants = {
   visible: {
     opacity: 1,
     transition: {
-      duration: 1,
-      delay: 0.5,
+      duration: 0.3,
+      delay: 0.3,
       when: "beforeChildren",
-      staggerChildren: 0.1,
+      staggerChildren: 0.15,
     },
   },
 };

@@ -7,8 +7,7 @@ const containerVariants: Variants = {
   visible: {
     opacity: 1,
     transition: {
-      delay: 0.5,
-      duration: 1,
+      duration: 0.15,
       when: "beforeChildren",
       staggerChildren: 0.2,
     },
@@ -31,7 +30,7 @@ const childVariants: Variants = {
 export function GridTitle() {
   return (
     <motion.hgroup
-      className="font-medium mb-6 flex justify-between items-center tracking-tight"
+      className="font-medium  mb-6 flex justify-between items-center tracking-tight"
       initial="hidden"
       animate="visible"
       variants={containerVariants}
