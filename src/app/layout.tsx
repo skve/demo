@@ -5,7 +5,6 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 import { SlideContainer } from "./components/slide/slide-container";
-import Script from "next/script";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,10 +31,6 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} antialiased `}
       suppressHydrationWarning
     >
-      <head>
-        <Script  src="https://unpkg.com/react-scan/dist/auto.global.js" />
-      </head>
-
       <body className="h-dvh">
         <ThemeProvider attribute="class" forcedTheme="dark">
           <SlideContainer>{children}</SlideContainer>
