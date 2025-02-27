@@ -32,7 +32,7 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body className="h-dvh">
-        <ThemeProvider attribute="class">
+        <ThemeProvider attribute="class" forcedTheme="dark">
           <SlideContainer>{children}</SlideContainer>
         </ThemeProvider>
       </body>
