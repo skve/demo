@@ -1,6 +1,7 @@
 "use client";
 
 import { AnimatePresence, motion, Transition, Variants } from "motion/react";
+import { usePathname } from "next/navigation";
 import { useHotkeys } from "@mantine/hooks";
 import { useState } from "react";
 
@@ -8,9 +9,6 @@ import { SlideSheriff } from "./slide-sheriff";
 import { PlayIcon } from "./parts/play-icon";
 
 import { cn } from "@/lib/utils";
-import { usePathname } from "next/navigation";
-
-const buttonDuration = 0.3;
 
 const containerVariants: Variants = {
   initial: {
@@ -48,34 +46,29 @@ const transitionBasis: Transition = {
   mass: 0.5,
   damping: 10,
   stiffness: 100,
+  ease: "easeOut",
 };
 
 const buttonContainerTransition: Transition = {
   ...transitionBasis,
 
-  delay: buttonDuration,
-  ease: "easeOut",
-  duration: 1.2,
+  duration: 0.1,
 };
 
 const buttonTransition: Transition = {
   ...transitionBasis,
-
-  // duration: buttonDuration,
-  ease: "easeOut",
+  mass: 0.1,
 };
 
 const transition: Transition = {
-  ...transitionBasis,
   type: "spring",
+  stiffness: 150,
+  damping: 19,
+  mass: 1.2,
 
   when: "beforeChildren",
-  delay: buttonDuration,
+  delay: 0.1,
   ease: "easeInOut",
-  duration: 1,
-  // bounce: 0,
-
-  // stiffness: 200,
 };
 
 export function SlideConstraint({
@@ -101,7 +94,6 @@ export function SlideConstraint({
       "p",
       () => {
         if (isStarted) {
-          setIsStarted(false);
           return;
         }
 
@@ -171,14 +163,24 @@ export function SlideConstraint({
           {isStarted ? (
             <motion.div
               className="flex origin-bottom w-full"
-              initial={{ opacity: 0, scale: 0.96, filter: "blu3ppx)" }}
-              animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
-              exit={{ opacity: 0, scale: 0.96, filter: "blur(3px)" }}
+              initial={{
+                opacity: 0,
+                scale: 0.99,
+                y: "0.25%",
+                filter: "blur(3px)",
+              }}
+              animate={{ opacity: 1, scale: 1, y: 0, filter: "blur(0px)" }}
+              exit={{
+                opacity: 0,
+                scale: 0.99,
+                y: "0.25%",
+                filter: "blur(3px)",
+              }}
               key={pathname}
               transition={{
-                delay: 0.5,
-                duration: 0.5,
-                ease: "easeOut",
+                delay: 0.6,
+                duration: 0.6,
+                ease: "easeInOut",
               }}
             >
               {children}
