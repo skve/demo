@@ -65,8 +65,6 @@ const transition: Transition = {
   damping: 19,
   mass: 1.2,
 
-  when: "beforeChildren",
-  delay: 0.1,
   ease: "easeInOut",
 };
 
@@ -116,7 +114,7 @@ export function SlideConstraint({
         transition={transition}
         className={cn(
           "shadow-4 flex relative overflow-hidden bg-gray-1 h-auto ring ring-gray-3 w-full max-h-dvh",
-          !isStarted ? "sm:aspect-video xl:h-auto h-dvh" : "h-full",
+          !isStarted ? "h-dvh" : "h-full",
           className
         )}
       >
@@ -175,7 +173,6 @@ export function SlideConstraint({
               }}
               key={pathname}
               transition={{
-                delay: 0.6,
                 duration: 0.6,
                 ease: "easeInOut",
               }}

@@ -1,7 +1,20 @@
 "use client";
 
-import { motion } from "motion/react";
+import { motion, Variants } from "motion/react";
 import { useEffect, useRef } from "react";
+
+const containerVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      duration: 1,
+      delay: 0.5,
+      when: "beforeChildren",
+      staggerChildren: 0.1,
+    },
+  },
+};
 
 export function Grid({ children }: { children: React.ReactNode }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -47,6 +60,10 @@ export function Grid({ children }: { children: React.ReactNode }) {
 
   return (
     <motion.div
+      variants={containerVariants}
+      initial="hidden"
+      animate="visible"
+      exit="hidden"
       ref={ref}
       style={{
         gridTemplateColumns: `repeat(auto-fit, minmax(${ROW_HEIGHT}rem, 1fr))`,
