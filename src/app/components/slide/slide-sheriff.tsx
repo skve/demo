@@ -4,6 +4,7 @@ import { AnimatePresence, motion, Variants } from "motion/react";
 
 import { useViewport } from "./hooks/useViewport";
 import { useMemo } from "react";
+import { cn } from "@/lib/utils";
 
 const variants: Variants = {
   hidden: { opacity: 0 },
@@ -45,7 +46,10 @@ export function SlideSheriff() {
         initial="hidden"
         exit="hidden"
         animate={isTooSmall ? "visible" : "hidden"}
-        className="absolute shadow-2 text-gray-12 z-50 bg-black-a3 dark:bg-black-a3 inset-0 ring-gray-6 dark:ring-gray-4 backdrop-blur-xl flex justify-center items-center"
+        className={cn(
+          "absolute shadow-2 text-gray-12 z-50 bg-black-a3 dark:bg-black-a3 inset-0 ring-gray-6 dark:ring-gray-4 backdrop-blur-xl flex justify-center items-center",
+          !isTooSmall ? "pointer-events-none": "pointer-events-auto"
+        )}
       >
         {isTooSmall && (
           <motion.div
