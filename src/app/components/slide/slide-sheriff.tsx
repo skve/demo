@@ -37,6 +37,9 @@ export function SlideSheriff() {
       (width && width < minimum.width) || (height && height < minimum.height)
     );
   }, [width, height]);
+  
+
+  return null;
 
   return (
     <AnimatePresence>

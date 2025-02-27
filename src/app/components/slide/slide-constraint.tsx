@@ -8,6 +8,7 @@ import { SlideSheriff } from "./slide-sheriff";
 import { PlayIcon } from "./parts/play-icon";
 
 import { cn } from "@/lib/utils";
+import { usePathname } from "next/navigation";
 
 const buttonDuration = 0.3;
 
@@ -82,6 +83,8 @@ export function SlideConstraint({
   children: React.ReactNode;
   className?: string;
 }) {
+  const pathname = usePathname();
+
   const [isStarted, setIsStarted] = useState(false);
   const [publishHotkeyPress, setPublishHotkeyPress] = useState(false);
 
@@ -136,7 +139,13 @@ export function SlideConstraint({
             onClick={handleStart}
             variants={buttonVariants}
             initial="initial"
-            animate={isStarted ? "animate" : publishHotkeyPress ? { scale: 0.9 } : "initial"}
+            animate={
+              isStarted
+                ? "animate"
+                : publishHotkeyPress
+                ? { scale: 0.9 }
+                : "initial"
+            }
             className="bg-gray-3 hover:bg-gray-4 hover:[&>kbd]:bg-gray-7 focus:outline-0 h-10 focus-visible:ring-2 focus-visible:ring-pink-7 focus-visible:ring-offset-4 focus-visible:ring-offset-gray-1 text-gray-12 flex gap-1.5 items-center justify-center transition-colors duration-200 rounded-lg px-4 py-1.5 shadow-3"
           >
             <PlayIcon className="size-4 flex-none" />
@@ -150,7 +159,23 @@ export function SlideConstraint({
 
         <SlideSheriff />
 
-        {isStarted ? children : null}
+        <AnimatePresence initial={false} mode="popLayout">
+          {isStarted ? (
+            <motion.div
+              className="flex  origin-center w-full"
+              initial={{ opacity: 0, scale: 0.96, filter: "blu3ppx)" }}
+              animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
+              exit={{ opacity: 0, scale: 0.96, filter: "blur(3px)" }}
+              key={pathname}
+              transition={{
+                duration: 0.2,
+                ease: "easeInOut",
+              }}
+            >
+              {children}
+            </motion.div>
+          ) : null}
+        </AnimatePresence>
       </motion.div>
     </AnimatePresence>
   );
