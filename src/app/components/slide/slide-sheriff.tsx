@@ -47,7 +47,7 @@ export function SlideSheriff() {
         exit="hidden"
         animate={isTooSmall ? "visible" : "hidden"}
         className={cn(
-          "absolute shadow-2 text-gray-12 z-50 bg-black-a3 dark:bg-black-a3 inset-0 ring-gray-6 dark:ring-gray-4 backdrop-blur-xl flex justify-center items-center",
+          "absolute shadow-2 text-gray-12 z-50 bg-black-a3 inset-0 ring-gray-4 backdrop-blur-xl flex justify-center items-center",
           !isTooSmall ? "pointer-events-none": "pointer-events-auto"
         )}
       >

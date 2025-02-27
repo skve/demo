@@ -32,7 +32,6 @@ const buttonVariants: Variants = {
   },
 };
 
-
 const buttonTransition: Transition = {
   duration: buttonDuration,
   type: "spring",
@@ -75,7 +74,7 @@ export function SlideConstraint({
         animate={isStarted ? "animate" : "initial"}
         transition={transition}
         className={cn(
-          "shadow-4 flex p-32 relative overflow-hidden bg-gray-1 h-auto ring ring-gray-4 dark:ring-gray-3 w-full max-h-dvh aspect-video",
+          "shadow-4 flex p-32 relative overflow-hidden bg-gray-1 h-auto ring ring-gray-3 w-full max-h-dvh aspect-video",
           className
         )}
       >
@@ -84,12 +83,12 @@ export function SlideConstraint({
           initial="initial"
           transition={buttonTransition}
           animate={isStarted ? "animate" : "initial"}
-          className="bg-black-a2 dark:bg-black-a4 backdrop-blur-md z-50 inset-0 absolute w-full h-full flex justify-center items-center"
+          className="bg-black-a4 backdrop-blur-md z-50 inset-0 absolute w-full h-full flex justify-center items-center"
         >
           <motion.button
             whileTap={{ scale: 0.9 }}
             onClick={handleStart}
-            className="bg-gray-2 hover:bg-gray-3 dark:bg-gray-3 focus:outline-0 focus-visible:ring-2 focus-visible:ring-pink-7 focus-visible:ring-offset-4 focus-visible:ring-offset-gray-1 dark:hover:bg-gray-4 flex items-center justify-center text-gray-10 hover:text-gray-11 transition-colors duration-200 rounded-full px-2.5 py-1.5 size-32 shadow-3"
+            className="bg-gray-3 focus:outline-0 focus-visible:ring-2 focus-visible:ring-pink-7 focus-visible:ring-offset-4 focus-visible:ring-offset-gray-1 hover:bg-gray-4 flex items-center justify-center text-gray-10 hover:text-gray-11 transition-colors duration-200 rounded-full px-2.5 py-1.5 size-32 shadow-3"
           >
             <PlayIcon className="size-14" />
           </motion.button>
