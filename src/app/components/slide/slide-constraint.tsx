@@ -83,6 +83,7 @@ export function SlideConstraint({
   className?: string;
 }) {
   const [isStarted, setIsStarted] = useState(false);
+  const [publishHotkeyPress, setPublishHotkeyPress] = useState(false);
 
   function handleStart() {
     if (isStarted) return;
@@ -90,7 +91,20 @@ export function SlideConstraint({
     setIsStarted(true);
   }
 
-  useHotkeys([["p", handleStart]]);
+  useHotkeys([
+    [
+      "p",
+      () => {
+        if (isStarted) return;
+
+        setPublishHotkeyPress(true);
+        setTimeout(() => {
+          handleStart();
+          setTimeout(() => setPublishHotkeyPress(false), 400);
+        }, 100);
+      },
+    ],
+  ]);
 
   return (
     <AnimatePresence>
@@ -118,13 +132,15 @@ export function SlideConstraint({
             onClick={handleStart}
             variants={buttonVariants}
             initial="initial"
-            animate={isStarted ? "animate" : "initial"}
+            animate={isStarted ? "animate" : publishHotkeyPress ? { scale: 0.9 } : "initial"}
             className="bg-gray-3 hover:bg-gray-4 hover:[&>kbd]:bg-gray-7 focus:outline-0 h-10 focus-visible:ring-2 focus-visible:ring-pink-7 focus-visible:ring-offset-4 focus-visible:ring-offset-gray-1 text-gray-12 flex gap-1.5 items-center justify-center transition-colors duration-200 rounded-lg px-4 py-1.5 shadow-3"
           >
             <PlayIcon className="size-4 flex-none" />
             <span className="text-base font-medium pl-1">Start Demo</span>
 
-            <kbd className="size-5 font-medium relative left-1 flex-none flex rounded text-sm transition-colors duration-200 justify-center items-center text-gray-12 bg-gray-6">P</kbd>
+            <kbd className="size-5 font-medium relative left-1 flex-none flex rounded text-sm transition-colors duration-200 justify-center items-center text-gray-12 bg-gray-6">
+              P
+            </kbd>
           </motion.button>
         </motion.div>
 
