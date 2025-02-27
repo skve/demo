@@ -138,6 +138,7 @@ export function SlideConstraint({
             "bg-black-a4 fle backdrop-blur-md z-50 inset-0 absolute w-full h-full flex justify-center items-center",
             isStarted && "pointer-events-none"
           )}
+          layout
         >
           <motion.button
             whileTap={{ scale: 0.92 }}
@@ -152,6 +153,7 @@ export function SlideConstraint({
                 ? { scale: 0.92 }
                 : "initial"
             }
+            layout
             className="bg-gray-3 hover:bg-gray-4 hover:[&>kbd]:bg-gray-7 focus:outline-0 h-10 focus-visible:ring-2 focus-visible:ring-pink-7 focus-visible:ring-offset-4 focus-visible:ring-offset-gray-1 text-gray-12 flex gap-1.5 items-center justify-center transition-colors duration-200 rounded-lg px-4 py-1.5 shadow-3"
           >
             <PlayIcon className="size-4 flex-none" />
