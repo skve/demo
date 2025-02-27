@@ -21,15 +21,36 @@ const containerVariants: Variants = {
   },
 };
 
+const buttonContainerVariants: Variants = {
+  initial: {
+    opacity: 1,
+    // filter: "blur(0px)",
+  },
+  animate: {
+    // filter: "blur(1px)",
+    opacity: 0,
+  },
+};
+
 const buttonVariants: Variants = {
   initial: {
     opacity: 1,
     filter: "blur(0px)",
   },
   animate: {
-    filter: "blur(1px)",
+    filter: "blur(2px)",
     opacity: 0,
   },
+};
+
+const buttonContainerTransition: Transition = {
+  duration: 1.2,
+  delay: buttonDuration,
+  type: "spring",
+  mass: 0.5,
+  damping: 10,
+  stiffness: 100,
+  ease: "easeOut",
 };
 
 const buttonTransition: Transition = {
@@ -38,11 +59,11 @@ const buttonTransition: Transition = {
   mass: 0.5,
   damping: 10,
   stiffness: 100,
-  ease: "easeInOut",
+  ease: "easeOut",
 };
 
 const transition: Transition = {
-  delay: buttonDuration * 0.4,
+  delay: buttonDuration,
   duration: 1.2,
   when: "beforeChildren",
   type: "spring",
@@ -62,6 +83,8 @@ export function SlideConstraint({
   const [isStarted, setIsStarted] = useState(false);
 
   function handleStart() {
+    if (isStarted) return; 
+
     setIsStarted(true);
   }
 
@@ -79,19 +102,24 @@ export function SlideConstraint({
         )}
       >
         <motion.div
-          variants={buttonVariants}
+          variants={buttonContainerVariants}
           initial="initial"
-          transition={buttonTransition}
+          transition={buttonContainerTransition}
           animate={isStarted ? "animate" : "initial"}
-          className="bg-black-a4  backdrop-blur-md z-50 inset-0 absolute w-full h-full flex justify-center items-center"
+          className="bg-black-a4 backdrop-blur-md z-50 inset-0 absolute w-full h-full flex justify-center items-center"
         >
           <motion.button
             whileTap={{ scale: 0.9 }}
+            transition={buttonTransition}
             onClick={handleStart}
-            className="bg-gray-3 focus:outline-0 h-10 focus-visible:ring-2 focus-visible:ring-pink-7 focus-visible:ring-offset-4 focus-visible:ring-offset-gray-1 hover:bg-gray-2 flex gap-1.5 items-center justify-center text-gray-12 transition-colors duration-200 rounded-lg px-4 py-1.5 shadow-3"
+            variants={buttonVariants}
+            initial="initial"
+            animate={isStarted ? "animate" : "initial"}
+            // className="bg-gray-3 hover:bg-gray-4 focus:outline-0 h-10 focus-visible:ring-2 focus-visible:ring-pink-7 focus-visible:ring-offset-4 focus-visible:ring-offset-gray-1 text-gray-12 flex gap-1.5 items-center justify-center transition-colors duration-200 rounded-lg px-4 py-1.5 shadow-3"
+            className="bg-gray-12 hover:bg-gray-12 focus:outline-0 h-10 focus-visible:ring-2 focus-visible:ring-pink-7 focus-visible:ring-offset-4 focus-visible:ring-offset-gray-1 text-gray-1 ring ring-gray-11 flex gap-1.5 items-center justify-center transition-colors duration-200 rounded-lg px-4 py-1.5 shadow-3"
           >
             <PlayIcon className="size-4 flex-none" />
-            <span className="text-base font-medium pl-1">Start demo</span>
+            <span className="text-base font-medium pl-1">Start Demo</span>
           </motion.button>
         </motion.div>
 

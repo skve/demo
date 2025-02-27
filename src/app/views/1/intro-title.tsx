@@ -7,6 +7,7 @@ const containerVariants: Variants = {
   visible: {
     opacity: 1,
     transition: {
+      delay: 0.5,
       duration: 1,
       when: "beforeChildren",
       staggerChildren: 0.2,
@@ -30,7 +31,7 @@ const childVariants: Variants = {
 export function IntroTitle() {
   return (
     <motion.hgroup
-      className="font-medium  mt-auto space-y-1.5 tracking-tight"
+      className="font-medium mt-auto space-y-1.5 tracking-tight"
       initial="hidden"
       animate="visible"
       variants={containerVariants}
