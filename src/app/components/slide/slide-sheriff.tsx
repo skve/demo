@@ -48,7 +48,7 @@ export function SlideSheriff() {
         animate={isTooSmall ? "visible" : "hidden"}
         className={cn(
           "absolute shadow-2 text-gray-12 z-50 bg-black-a9 inset-0 ring-gray-4 backdrop-blur-xl flex justify-center items-center",
-          !isTooSmall ? "pointer-events-none": "pointer-events-auto"
+          !isTooSmall ? "pointer-events-none" : "pointer-events-auto"
         )}
       >
         {isTooSmall && (
@@ -57,7 +57,7 @@ export function SlideSheriff() {
             variants={sheriffVariants}
             initial="hidden"
             animate="visible"
-            className="capitalize rounded-full flex items-center bg-gray-1 px-4 py-2 font-medium text-gray-12 shadow-3 gap-2"
+            className="bg-amber-3 capitalize text-amber-12 ring ring-amber-5 flex gap-1.5 items-center justify-center font-medium rounded-lg px-4 py-1.5 shadow-3"
           >
             Your browser window is too small
           </motion.div>

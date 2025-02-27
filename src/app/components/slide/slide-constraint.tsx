@@ -98,6 +98,7 @@ export function SlideConstraint({
         if (isStarted) return;
 
         setPublishHotkeyPress(true);
+
         setTimeout(() => {
           handleStart();
           setTimeout(() => setPublishHotkeyPress(false), 400);
