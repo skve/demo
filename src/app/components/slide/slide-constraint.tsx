@@ -24,10 +24,8 @@ const containerVariants: Variants = {
 const buttonContainerVariants: Variants = {
   initial: {
     opacity: 1,
-    // filter: "blur(0px)",
   },
   animate: {
-    // filter: "blur(1px)",
     opacity: 0,
   },
 };
@@ -43,34 +41,37 @@ const buttonVariants: Variants = {
   },
 };
 
-const buttonContainerTransition: Transition = {
-  duration: 1.2,
-  delay: buttonDuration,
+const transitionBasis: Transition = {
   type: "spring",
   mass: 0.5,
   damping: 10,
   stiffness: 100,
+};
+
+const buttonContainerTransition: Transition = {
+  ...transitionBasis,
+
+  delay: buttonDuration,
   ease: "easeOut",
+  duration: 1.2,
 };
 
 const buttonTransition: Transition = {
+  ...transitionBasis,
+
   duration: buttonDuration,
-  type: "spring",
-  mass: 0.5,
-  damping: 10,
-  stiffness: 100,
   ease: "easeOut",
 };
 
 const transition: Transition = {
-  delay: buttonDuration,
-  duration: 1.2,
+  ...transitionBasis,
+  
   when: "beforeChildren",
-  type: "spring",
-  mass: 0.5,
-  damping: 10,
-  stiffness: 200,
+  delay: buttonDuration,
   ease: "easeInOut",
+  duration: 1.2,
+
+  stiffness: 200,
 };
 
 export function SlideConstraint({
@@ -83,7 +84,7 @@ export function SlideConstraint({
   const [isStarted, setIsStarted] = useState(false);
 
   function handleStart() {
-    if (isStarted) return; 
+    if (isStarted) return;
 
     setIsStarted(true);
   }
