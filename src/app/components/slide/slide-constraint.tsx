@@ -5,7 +5,6 @@ import { usePathname } from "next/navigation";
 import { useHotkeys } from "@mantine/hooks";
 import { useState } from "react";
 
-import { SlideSheriff } from "./slide-sheriff";
 import { PlayIcon } from "./parts/play-icon";
 
 import { cn } from "@/lib/utils";
@@ -117,7 +116,7 @@ export function SlideConstraint({
         transition={transition}
         className={cn(
           "shadow-4 flex relative overflow-hidden bg-gray-1 h-auto ring ring-gray-3 w-full max-h-dvh",
-          !isStarted ? "aspect-video" : "h-full",
+          !isStarted ? "sm:aspect-video xl:h-auto h-dvh" : "h-full",
           className
         )}
       >
@@ -156,8 +155,6 @@ export function SlideConstraint({
             </kbd>
           </motion.button>
         </motion.div>
-
-        <SlideSheriff />
 
         <AnimatePresence initial={false} mode="popLayout">
           {isStarted ? (

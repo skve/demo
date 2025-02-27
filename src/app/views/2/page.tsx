@@ -6,25 +6,25 @@ import { GridTitle } from "./grid-title";
 
 export default function View2() {
   return (
-    <div className="overflow-y-auto flex-1 pt-6 pb-32 flex-col px-32 w-full flex h-full">
+    <div className="overflow-y-auto flex-1 px-6 pt-6 sm:px-10 xl:pb-32 flex-col xl:px-32 w-full flex h-full">
       {/* <div className="fixed inset-x-0 z-50 pointer-events-auto w-full h-[clamp(3rem,_10vh,_5rem)] backdrop-blur-sm top-0 [mask-image:linear-gradient(to_bottom,#000_25%,transparent)] before:content-[''] before:absolute before:inset-0 before:bg-[linear-gradient(to_bottom,var(--gray-1),transparent)]"></div> */}
 
       <GridTitle />
 
       <Grid>
-        <GridItem className="col-span-1 row-span-1">
+        <GridItem className="sm:col-span-1 row-span-1">
           <p>Live Dot</p>
         </GridItem>
         <GridItem className="row-start-2 col-span-1 row-span-1">
           <p>???</p>
         </GridItem>
-        <GridItem className="col-span-1 row-span-2">
+        <GridItem className="sm:col-span-1 row-span-2">
           <p>Tailwind Demo</p>
         </GridItem>
-        <GridItem className="col-span-2 row-span-1">
+        <GridItem className="sm:col-span-2 row-span-1">
           <p>Suggested Questions?</p>
         </GridItem>
-        <GridItem className="col-span-2 row-span-1">
+        <GridItem className="sm:col-span-2 row-span-1">
           <video
             loop
             muted
@@ -35,7 +35,7 @@ export default function View2() {
           ></video>
         </GridItem>
 
-        <GridItem className="col-span-3 row-span-1">
+        <GridItem className="sm:col-span-3 row-span-1">
           <p>T/A Rename</p>
         </GridItem>
       </Grid>

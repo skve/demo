@@ -1,5 +1,6 @@
 "use client";
 
+import { motion } from "motion/react";
 import { useEffect, useRef } from "react";
 
 export function Grid({ children }: { children: React.ReactNode }) {
@@ -34,7 +35,7 @@ export function Grid({ children }: { children: React.ReactNode }) {
       if (window.innerWidth > BREAKPOINT * REM) {
         gridElement.style.gridAutoRows = firstColumnWidth;
       } else {
-        gridElement.style.gridAutoRows = "";
+        gridElement.style.gridAutoRows = `${ROW_HEIGHT}rem`;
       }
     };
 
@@ -45,7 +46,7 @@ export function Grid({ children }: { children: React.ReactNode }) {
   }, [ref]);
 
   return (
-    <div
+    <motion.div
       ref={ref}
       style={{
         gridTemplateColumns: `repeat(auto-fit, minmax(${ROW_HEIGHT}rem, 1fr))`,
@@ -54,6 +55,6 @@ export function Grid({ children }: { children: React.ReactNode }) {
       className="grid w-full grid-flow-dense gap-3"
     >
       {children}
-    </div>
+    </motion.div>
   );
 }
