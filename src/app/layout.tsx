@@ -32,6 +32,10 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} ${fontSuisse.variable} ${fontInter.variable} antialiased dark`}
       suppressHydrationWarning
     >
+      {/* <head>
+        <script src="https://unpkg.com/react-scan/dist/auto.global.js" />
+      </head> */}
+
       <body className="h-dvh">
         <ThemeProvider attribute="class" forcedTheme="dark">
           <SlideContainer>{children}</SlideContainer>

@@ -1,21 +1,7 @@
-"use client";
-
-import { useEffect, useState } from "react";
-
 import { Avatar, AvatarImage, AvatarFallback } from "./demo-live-avatar";
 import { LiveBadge } from "./demo-live-badge";
 
 export function DemoLive() {
-  const [active, setActive] = useState(false);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setActive((prev) => !prev);
-    }, 3000);
-
-    return () => clearInterval(interval);
-  }, []);
-
   return (
     <div className="flex flex-1 h-full relative">
       <div className="absolute -translate-x-1/2 -translate-y-1/2 left-1/2 top-1/2 ">
@@ -39,7 +25,7 @@ export function DemoLive() {
             </div>
           </div>
 
-          <LiveBadge active={active} />
+          <LiveBadge />
         </div>
       </div>
     </div>
