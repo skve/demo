@@ -10,17 +10,33 @@ import { SlideConstraint } from "../components/slide/slide-constraint";
 export default function View2() {
   return (
     <SlideConstraint>
-      <div className="overflow-y-auto flex-1 px-6 pt-6 sm:px-10 pb-24 flex-col xl:px-32 w-full flex h-full">
+      <div className="overflow-y-auto max-w-[140rem] mx-auto flex-1 px-6 pt-6 sm:px-10 pb-24 flex-col xl:px-32 w-full flex h-full">
         <GridTitle />
 
         <Grid>
-          <GridItem className="sm:col-span-1 row-span-1">
+          <GridItem className="[grid-row:span_1] [grid-column:span_1]">
             <GridItemCaption>Delphi Video</GridItemCaption>
 
             <DemoLive />
           </GridItem>
 
-          <GridItem className="col-span-2 row-span-2 ">
+          <GridItem className="[grid-row:span_1] [grid-column:span_1]">
+            <GridItemCaption>Delphi Video</GridItemCaption>
+
+            <DemoLive />
+          </GridItem>
+          <GridItem className="[grid-row:span_1] [grid-column:span_1]">
+            <GridItemCaption>Delphi Video</GridItemCaption>
+
+            <DemoLive />
+          </GridItem>
+          <GridItem className="[grid-row:span_1] [grid-column:span_1]">
+            <GridItemCaption>Delphi Video</GridItemCaption>
+
+            <DemoLive />
+          </GridItem>
+
+          <GridItem className="[grid-row:span_2] [grid-column:span_2]">
             <GridItemCaption>Tailwind Labs</GridItemCaption>
 
             <DemoPassport />
