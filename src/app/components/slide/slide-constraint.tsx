@@ -160,7 +160,10 @@ export function SlideConstraint({
         <AnimatePresence initial={false} mode="popLayout">
           {isStarted ? (
             <motion.div
-              className="flex origin-bottom w-full"
+              className={cn(
+                "flex origin-bottom w-full",
+                className
+              )}
               initial={{
                 opacity: 0,
                 scale: 0.99,
