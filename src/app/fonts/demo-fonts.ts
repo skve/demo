@@ -1,4 +1,5 @@
 import localFont from "next/font/local";
+import { Inter } from "next/font/google";
 
 export const fontSuisse = localFont({
   src: [
@@ -14,4 +15,9 @@ export const fontSuisse = localFont({
     },
   ],
   variable: "--font-suisse",
+});
+
+export const fontInter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
 });

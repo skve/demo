@@ -1,9 +1,23 @@
+"use client";
+
+import { useEffect, useState } from "react";
+
 import { Avatar, AvatarImage, AvatarFallback } from "./demo-live-avatar";
 import { LiveBadge } from "./demo-live-badge";
 
 export function DemoLive() {
+  const [active, setActive] = useState(false);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActive((prev) => !prev);
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
-    <div className="mx-auto flex min-w-0 items-center gap-2 sm:mx-0">
+    <div className="mx-auto flex min-w-0 items-center gap-3 sm:mx-0">
       <div className="flex w-fit min-w-0 items-center gap-3">
         <span className="relative">
           <Avatar className="h-10 w-10 sm:h-8 sm:w-8">
@@ -23,7 +37,7 @@ export function DemoLive() {
         </div>
       </div>
 
-      <LiveBadge />
+      <LiveBadge active={active} />
     </div>
   );
 }

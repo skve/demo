@@ -5,7 +5,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 import { SlideContainer } from "./components/slide/slide-container";
-import { fontSuisse } from "./fonts/demo-fonts";
+import { fontSuisse, fontInter } from "./fonts/demo-fonts";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,7 +29,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} ${fontSuisse.variable} antialiased `}
+      className={`${geistSans.variable} ${geistMono.variable} ${fontSuisse.variable} ${fontInter.variable} antialiased dark`}
       suppressHydrationWarning
     >
       <body className="h-dvh">
