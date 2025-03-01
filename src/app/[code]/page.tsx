@@ -14,54 +14,35 @@ export default function View2() {
         <GridTitle />
 
         <Grid>
-          <GridItem className="[grid-row:span_1] [grid-column:span_1]">
+          <GridItem cols={1} rows={1}>
             <GridItemCaption>Delphi Video</GridItemCaption>
 
             <DemoLive />
           </GridItem>
 
-          <GridItem className="[grid-row:span_1] [grid-column:span_1]">
-            <GridItemCaption>Delphi Video</GridItemCaption>
-
-            <DemoLive />
-          </GridItem>
-          <GridItem className="[grid-row:span_1] [grid-column:span_1]">
-            <GridItemCaption>Delphi Video</GridItemCaption>
-
-            <DemoLive />
-          </GridItem>
-          <GridItem className="[grid-row:span_1] [grid-column:span_1]">
-            <GridItemCaption>Delphi Video</GridItemCaption>
-
-            <DemoLive />
-          </GridItem>
-
-          <GridItem className="[grid-row:span_2] [grid-column:span_2]">
+          <GridItem cols={2} rows={2}>
             <GridItemCaption>Tailwind Labs</GridItemCaption>
 
             <DemoPassport />
           </GridItem>
 
-          {/* <GridItem className="sm:col-span-1 row-span-2">
-            <p>Tailwind Demo</p>
+          <GridItem cols={1} rows={2}>
+            <GridItemCaption>Delphi Video</GridItemCaption>
+
+            <DemoLive />
           </GridItem>
-          <GridItem className="sm:col-span-2 row-span-1">
-            <p>Suggested Questions?</p>
-          </GridItem>
-          <GridItem className="sm:col-span-2 row-span-1">
-            <video
-              loop
-              muted
-              autoPlay
-              playsInline
-              className="w-full h-full object-cover"
-              src="https://rmqdxpokhwuzn5kd.public.blob.vercel-storage.com/work-previews/voice-memo-0HyUjp5JgN13YeHu2TYmdr4cvFwCrs.mp4"
-            ></video>
+          
+          <GridItem cols={2} rows={2}>
+            <GridItemCaption>Delphi Video</GridItemCaption>
+
+            <DemoLive />
           </GridItem>
 
-          <GridItem className="sm:col-span-3 row-span-1">
-            <p>T/A Rename</p>
-          </GridItem> */}
+          <GridItem cols={1} rows={1}>
+            <GridItemCaption>Delphi Video</GridItemCaption>
+
+            <DemoLive />
+          </GridItem>
         </Grid>
 
         <div className="flex mt-24 justify-center items-center flex-none">

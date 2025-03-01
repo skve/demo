@@ -19,15 +19,23 @@ const childVariants: Variants = {
 export function GridItem({
   children,
   className,
+  cols,
+  rows,
 }: {
   children: React.ReactNode;
   className?: string;
+  cols: number;
+  rows: number;
 }) {
   return (
     <motion.div
+      style={{
+        "--cols": cols,
+        "--rows": rows,
+      } as React.CSSProperties}
       variants={childVariants}
       className={cn(
-        "bg-gray-2 h-full relative flex items-center justify-center overflow-hidden",
+        "bg-gray-2 h-full relative flex flex-none items-center justify-center overflow-hidden grid-cols-1 grid-rows-1 sm:[grid-column:span_var(--cols)] sm:[grid-row:span_var(--rows)]",
         className
       )}
     >

@@ -64,12 +64,11 @@ export function Grid({ children }: { children: React.ReactNode }) {
       initial="hidden"
       animate="visible"
       exit="hidden"
-      ref={ref}
       style={{
-        gridTemplateColumns: `repeat(auto-fit, minmax(${ROW_HEIGHT}rem, 1fr))`,
-        gridAutoRows: `${ROW_HEIGHT}rem`,
-      }}
-      className="grid w-full grid-flow-dense gap-3"
+        "--row-height": `${ROW_HEIGHT}rem`,
+      } as React.CSSProperties}
+      ref={ref}
+      className="grid w-full grid-flow-dense sm:gap-3 gap-4 grid-cols-1 sm:[grid-template-columns:repeat(auto-fit,minmax(var(--row-height),1fr))]"
     >
       {children}
     </motion.div>
