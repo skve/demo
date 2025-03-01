@@ -106,6 +106,7 @@
   --font-sans: var(--font-geist-sans);
   --font-suisse: var(--font-suisse);
   --font-inter: var(--font-inter);
+  --font-lukas: var(--font-lukas);
 
   --shadow-*: initial;
   --shadow-1: var(--s-1);
@@ -206,3 +207,10 @@
     @apply bg-pink-3 text-pink-9;
   }
 }
+
+@layer utilities {
+  .lukas {
+    @apply text-sm font-lukas font-[460] uppercase text-gray-12 tracking-[1px];
+  }
+}
+

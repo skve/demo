@@ -8,7 +8,7 @@ import { fontSuisse, fontInter } from "../fonts/demo-fonts";
 
 import { SlideContainer } from "../components/slide/slide-container";
 import { ReactScan } from "../components/react-scan";
-
+import { lukas } from "../fonts/lukas/lukas";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -36,7 +36,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} ${fontSuisse.variable} ${fontInter.variable} antialiased dark`}
+      className={`${geistSans.variable} ${geistMono.variable} ${fontSuisse.variable} ${fontInter.variable} ${lukas.variable} antialiased dark`}
       suppressHydrationWarning
     >
       <head>

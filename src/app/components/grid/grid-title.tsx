@@ -36,10 +36,11 @@ export function GridTitle() {
       animate="visible"
       variants={containerVariants}
     >
-      <motion.h1 className="text-base text-gray-12 tracking-[-0.02em]" variants={childVariants}>
-        Luke Shiels
-      </motion.h1>
-      <motion.h2 className="text-base text-gray-11 tracking-[-0.02em]" variants={childVariants}>
+      <motion.h2 className="lukas" variants={childVariants}>
+      Luke Shiels
+      </motion.h2>
+
+      <motion.h2 className="lukas" variants={childVariants}>
         Selected Works
       </motion.h2>
     </motion.hgroup>
