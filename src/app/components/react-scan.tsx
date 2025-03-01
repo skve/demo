@@ -1,3 +1,4 @@
+import Script from "next/script";
 import { precomputedFlags, reactScanFlag } from "../flags";
 
 type Params = Promise<{ code: string }>;
@@ -11,7 +12,7 @@ export async function ReactScan({ params }: { params: Params }) {
 
   return (
     <>
-      <script src="https://unpkg.com/react-scan/dist/auto.global.js" />
+      <Script strategy="beforeInteractive" src="https://unpkg.com/react-scan/dist/auto.global.js" />
     </>
   );
 }
