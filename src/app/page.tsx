@@ -1,6 +1,6 @@
-
 import { Grid } from "./components/grid/grid";
 import { GridItem } from "./components/grid/grid-item";
+import { GridItemCaption } from "./components/grid/grid-item-caption";
 import { GridTitle } from "./components/grid/grid-title";
 import { DemoLive } from "./components/interactions/live/demo-live";
 import { Signature } from "./components/signature";
@@ -14,8 +14,11 @@ export default function View2() {
 
         <Grid>
           <GridItem className="sm:col-span-1 row-span-1">
-           <DemoLive />
+            <GridItemCaption>Delphi Video</GridItemCaption>
+
+            <DemoLive />
           </GridItem>
+
           <GridItem className="row-start-2 col-span-1 row-span-1">
             <p>???</p>
           </GridItem>
