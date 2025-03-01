@@ -99,6 +99,7 @@
   --font-*: initial;
   --font-mono: var(--font-geist-mono);
   --font-sans: var(--font-geist-sans);
+  --font-suisse: var(--font-suisse);
 
   --shadow-*: initial;
   --shadow-1: var(--s-1);

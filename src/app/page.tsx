@@ -2,6 +2,7 @@
 import { Grid } from "./components/grid/grid";
 import { GridItem } from "./components/grid/grid-item";
 import { GridTitle } from "./components/grid/grid-title";
+import { DemoLive } from "./components/interactions/live/demo-live";
 import { Signature } from "./components/signature";
 import { SlideConstraint } from "./components/slide/slide-constraint";
 
@@ -13,7 +14,7 @@ export default function View2() {
 
         <Grid>
           <GridItem className="sm:col-span-1 row-span-1">
-            <p>Live Dot</p>
+           <DemoLive />
           </GridItem>
           <GridItem className="row-start-2 col-span-1 row-span-1">
             <p>???</p>
