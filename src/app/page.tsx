@@ -42,7 +42,7 @@ export default function View2() {
         </GridItem>
       </Grid>
 
-        <div className="fixed pointer-events-auto inset-x-0  w-full h-[clamp(5rem,_10vh,_8rem)] backdrop-blur-sm bottom-0 [mask-image:linear-gradient(to_top,#000_25%,transparent)] before:content-[''] before:absolute before:inset-0 before:bg-[linear-gradient(to_top,var(--gray-1),transparent)]"></div>
+        <div className="fixed pointer-events-auto inset-x-0 w-dvw h-[clamp(5rem,_10vh,_8rem)] backdrop-blur-sm bottom-0 [mask-image:linear-gradient(to_top,#000_25%,transparent)] before:content-[''] before:absolute before:inset-0 before:bg-[linear-gradient(to_top,var(--gray-1),transparent)]"></div>
       </div>
     </SlideConstraint>
   );

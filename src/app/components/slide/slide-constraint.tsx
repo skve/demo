@@ -11,10 +11,12 @@ import { cn } from "@/lib/utils";
 
 const containerVariants: Variants = {
   initial: {
+    '--tw-ring-color': "var(--gray-3)",
     borderRadius: "2rem",
     scale: 0.9,
   },
   animate: {
+    '--tw-ring-color': "var(--gray-1)",
     borderRadius: "0",
     scale: 1,
   },
@@ -60,6 +62,7 @@ const buttonTransition: Transition = {
 };
 
 const transition: Transition = {
+  delay: 0.2,
   type: "spring",
   stiffness: 150,
   damping: 19,
@@ -113,7 +116,7 @@ export function SlideConstraint({
         animate={isStarted ? "animate" : "initial"}
         transition={transition}
         className={cn(
-          "shadow-4 flex relative overflow-hidden bg-gray-1 h-auto ring ring-gray-3 w-full max-h-dvh",
+          "shadow-4 flex relative overflow-hidden bg-gray-1 h-auto ring w-full max-h-dvh",
           !isStarted ? "h-dvh" : "h-full",
           className
         )}

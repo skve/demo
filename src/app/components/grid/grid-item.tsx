@@ -25,7 +25,7 @@ export function GridItem({
     <motion.div
       variants={childVariants}
       className={cn(
-        "bg-gray-3 ring ring-gray-4 rounded-md relative flex items-center justify-center overflow-hidden",
+        "bg-gray-2 h-full relative flex items-center justify-center overflow-hidden",
         className
       )}
     >
