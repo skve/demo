@@ -4,8 +4,11 @@ import type { Metadata } from "next";
 
 import "./globals.css";
 
-import { SlideContainer } from "./components/slide/slide-container";
 import { fontSuisse, fontInter } from "./fonts/demo-fonts";
+
+import { SlideContainer } from "./components/slide/slide-container";
+import { ReactScan } from "./components/react-scan";
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,9 +35,9 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} ${fontSuisse.variable} ${fontInter.variable} antialiased dark`}
       suppressHydrationWarning
     >
-      {/* <head>
-        <script src="https://unpkg.com/react-scan/dist/auto.global.js" />
-      </head> */}
+      <head>
+        <ReactScan />
+      </head>
 
       <body className="h-dvh">
         <ThemeProvider attribute="class" forcedTheme="dark">
