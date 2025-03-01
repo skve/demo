@@ -1,13 +1,17 @@
-import { reactScanFlag } from "../flags";
+import { precomputedFlags, reactScanFlag } from "../flags";
 
-export async function ReactScan() {
-  const scan = await reactScanFlag();
+type Params = Promise<{ code: string }>;
+
+export async function ReactScan({ params }: { params: Params }) {
+  const { code } = await params;
+
+  const scan = await reactScanFlag(code, precomputedFlags);
+
+  if (!scan) return null;
 
   return (
     <>
-      {scan && (
-        <script src="https://unpkg.com/react-scan/dist/auto.global.js" />
-      )}
+      <script src="https://unpkg.com/react-scan/dist/auto.global.js" />
     </>
   );
 }

@@ -2,12 +2,12 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { ThemeProvider } from "next-themes";
 import type { Metadata } from "next";
 
-import "./globals.css";
+import "../globals.css";
 
-import { fontSuisse, fontInter } from "./fonts/demo-fonts";
+import { fontSuisse, fontInter } from "../fonts/demo-fonts";
 
-import { SlideContainer } from "./components/slide/slide-container";
-import { ReactScan } from "./components/react-scan";
+import { SlideContainer } from "../components/slide/slide-container";
+import { ReactScan } from "../components/react-scan";
 
 
 const geistSans = Geist({
@@ -24,10 +24,14 @@ export const metadata: Metadata = {
   title: "Luke Shiels | Selected Works",
 };
 
+type Params = Promise<{ code: string }>;
+
 export default function RootLayout({
   children,
+  params,
 }: Readonly<{
   children: React.ReactNode;
+  params: Params;
 }>) {
   return (
     <html
@@ -36,7 +40,7 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <head>
-        <ReactScan />
+        <ReactScan params={params} />
       </head>
 
       <body className="h-dvh">

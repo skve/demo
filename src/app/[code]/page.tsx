@@ -1,10 +1,10 @@
-import { Grid } from "./components/grid/grid";
-import { GridItem } from "./components/grid/grid-item";
-import { GridItemCaption } from "./components/grid/grid-item-caption";
-import { GridTitle } from "./components/grid/grid-title";
-import { DemoLive } from "./components/interactions/live/demo-live";
-import { Signature } from "./components/signature";
-import { SlideConstraint } from "./components/slide/slide-constraint";
+import { Grid } from "../components/grid/grid";
+import { GridItem } from "../components/grid/grid-item";
+import { GridItemCaption } from "../components/grid/grid-item-caption";
+import { GridTitle } from "../components/grid/grid-title";
+import { DemoLive } from "../components/interactions/live/demo-live";
+import { Signature } from "../components/signature";
+import { SlideConstraint } from "../components/slide/slide-constraint";
 
 export default function View2() {
   return (
