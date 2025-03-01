@@ -1,4 +1,3 @@
-"use client";
 
 import { Grid } from "./components/grid/grid";
 import { GridItem } from "./components/grid/grid-item";
@@ -8,10 +7,8 @@ import { SlideConstraint } from "./components/slide/slide-constraint";
 
 export default function View2() {
   return (
-    <SlideConstraint >
+    <SlideConstraint>
       <div className="overflow-y-auto flex-1 px-6 pt-6 sm:px-10 pb-24 flex-col xl:px-32 w-full flex h-full">
-        {/* <div className="fixed inset-x-0 z-50 pointer-events-auto w-full h-[clamp(3rem,_10vh,_5rem)] backdrop-blur-sm top-0 [mask-image:linear-gradient(to_bottom,#000_25%,transparent)] before:content-[''] before:absolute before:inset-0 before:bg-[linear-gradient(to_bottom,var(--gray-1),transparent)]"></div> */}
-
         <GridTitle />
 
         <Grid>
