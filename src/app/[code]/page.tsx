@@ -3,6 +3,7 @@ import { GridItem } from "../components/grid/grid-item";
 import { GridItemCaption } from "../components/grid/grid-item-caption";
 import { GridTitle } from "../components/grid/grid-title";
 import { DemoLive } from "../components/interactions/live/demo-live";
+import { DemoPassport } from "../components/interactions/passport/demo-passport";
 import { Signature } from "../components/signature";
 import { SlideConstraint } from "../components/slide/slide-constraint";
 
@@ -19,10 +20,13 @@ export default function View2() {
             <DemoLive />
           </GridItem>
 
-          <GridItem className="row-start-2 col-span-1 row-span-1">
-            <p>???</p>
+          <GridItem className="col-span-2 row-span-2 ">
+            <GridItemCaption>Tailwind Labs</GridItemCaption>
+
+            <DemoPassport />
           </GridItem>
-          <GridItem className="sm:col-span-1 row-span-2">
+
+          {/* <GridItem className="sm:col-span-1 row-span-2">
             <p>Tailwind Demo</p>
           </GridItem>
           <GridItem className="sm:col-span-2 row-span-1">
@@ -41,7 +45,7 @@ export default function View2() {
 
           <GridItem className="sm:col-span-3 row-span-1">
             <p>T/A Rename</p>
-          </GridItem>
+          </GridItem> */}
         </Grid>
 
         <div className="flex mt-24 justify-center items-center flex-none">

@@ -97,6 +97,11 @@
   --color-amber-12: var(--amber-12);
 
   --font-*: initial;
+  --font-mono-system: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+
+  --animate-demo-spin: spin 10s linear infinite;
+
   --font-mono: var(--font-geist-mono);
   --font-sans: var(--font-geist-sans);
   --font-suisse: var(--font-suisse);
@@ -109,6 +114,22 @@
   --shadow-4: var(--s-4);
   --shadow-5: var(--s-5);
   --shadow-6: var(--s-6);
+
+  @keyframes spin {
+    from {
+      transform: translate(-50%, -50%) rotate(1turn);
+    }
+
+    to {
+      transform: translate(-50%, -50%) rotate(0);
+    }
+  }
+
+  @keyframes draw {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
 }
 
 @layer base {
@@ -155,10 +176,33 @@
   body {
     @apply font-sans bg-gray-1 text-gray-12;
   }
+
+  .draw {
+    & > path {
+      @apply stroke-current stroke-3;
+
+      stroke-dasharray: 1;
+      stroke-dashoffset: 1;
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      & > path {
+        animation: draw 0.5s 3 calc(var(--stagger) * 0.5s) forwards;
+      }
+
+      & > path:first-child {
+        animation-timing-function: ease-out;
+      }
+
+      & > path:last-child {
+        animation-timing-function: ease-in-out;
+      }
+    }
+  }
 }
 
 @layer components {
   ::selection {
-    @apply bg-pink-4 text-pink-12;
+    @apply bg-pink-3 text-pink-9;
   }
 }

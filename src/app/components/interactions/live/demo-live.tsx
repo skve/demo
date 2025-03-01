@@ -19,7 +19,7 @@ export function DemoLive() {
             </span>
 
             <div className="flex min-w-0 items-center gap-1">
-              <h1 className="font-suisse cursor-default select-none truncate text-nowrap text-xl font-medium leading-none tracking-tight">
+              <h1 className="font-suisse cursor-default  truncate text-nowrap text-xl font-medium leading-none tracking-tight">
                 Luke Shiels
               </h1>
             </div>

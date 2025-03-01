@@ -7,7 +7,7 @@ export function SlideContainer({
   return (
     <main
       className={cn(
-        "select-none overflow-hidden bg-gray-2/70 h-dvh flex justify-center items-center"
+        "overflow-hidden bg-gray-2/70 h-dvh flex justify-center items-center"
       )}
       {...props}
     >
