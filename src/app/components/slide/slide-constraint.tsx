@@ -80,7 +80,7 @@ export function SlideConstraint({
 }) {
   const pathname = usePathname();
 
-  const [isStarted, setIsStarted] = useState(true);
+  const [isStarted, setIsStarted] = useState(false);
   const [publishHotkeyPress, setPublishHotkeyPress] = useState(false);
 
   function handleStart() {

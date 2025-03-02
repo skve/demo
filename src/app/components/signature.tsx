@@ -8,8 +8,9 @@ const containerVariants: Variants = {
     opacity: 1,
     transition: {
       duration: 0,
+      delay: 1,
       delayChildren: 0.3,
-      staggerChildren: 0.8,
+      staggerChildren: 0.2,
       when: "beforeChildren",
     },
   },
@@ -37,12 +38,13 @@ export function Signature() {
       transition={{
         delay: 3,
         duration: 1.35,
-        ease: "easeInOut",
+        ease: "easeOut",
       }}
       width="136"
       height="43"
       fill="none"
       viewBox="0 0 136 43"
+      viewport={{ once: true }}
       stroke="currentColor"
       strokeLinecap="round"
       className="text-gray-7"
