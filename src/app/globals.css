@@ -100,8 +100,6 @@
   --font-mono-system: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
     "Liberation Mono", "Courier New", monospace;
 
-  --animate-demo-spin: spin 10s linear infinite;
-
   --font-mono: var(--font-geist-mono);
   --font-sans: var(--font-geist-sans);
   --font-suisse: var(--font-suisse);
@@ -116,15 +114,6 @@
   --shadow-5: var(--s-5);
   --shadow-6: var(--s-6);
 
-  @keyframes spin {
-    from {
-      transform: translate(-50%, -50%) rotate(1turn);
-    }
-
-    to {
-      transform: translate(-50%, -50%) rotate(0);
-    }
-  }
 }
 
 @layer base {

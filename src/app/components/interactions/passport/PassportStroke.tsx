@@ -10,7 +10,7 @@ export function PassportStroke() {
 
   return (
     <div
-      className="absolute -top-[var(--border-width)] -right-[var(--border-width)] -bottom-[var(--border-width)] -left-[var(--border-width)] -z-10 overflow-hidden rounded-[calc(var(--radius-3xl)_+_var(--border-width))] content-[''] [-webkit-mask:var(--border-bg)] [mask-composite:exclude] [mask:var(--border-mask)] before:absolute before:top-1/2 before:left-1/2 before:block before:w-[calc(100%_*_var(--border-factor))] before:animate-demo-spin before:rounded-full before:py-96 before:opacity-75 before:content-[''] before:[background:var(--border-bg)]"
+      className="absolute -top-(--border-width) -right-(--border-width) -bottom-(--border-width) -left-(--border-width) -z-10 overflow-hidden rounded-[calc(var(--radius-3xl)_+_var(--border-width))] content-[''] [-webkit-mask:var(--border-bg)] [mask-composite:exclude] [mask:var(--border-mask)] before:absolute before:top-1/2 before:left-1/2 before:block before:w-[calc(100%_*_var(--border-factor))] before:animate-spin before:-translate-1/2 before:[animation-duration:30s] before:rounded-full before:py-96 before:opacity-75 before:content-[''] before:[background:var(--border-bg)]"
       style={vars}
       aria-hidden
     />
