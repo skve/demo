@@ -16,7 +16,7 @@ export function PassportHeader() {
         <Separator className="flex-1" />
       </ItemContainer>
 
-      <h3 className="text-sm tracking-wider">Canada</h3>
+      <h3 className="text-sm tracking-wider">USA</h3>
 
       <ItemContainer>
         <Separator className="flex-1" />
