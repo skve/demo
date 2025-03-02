@@ -9,22 +9,22 @@ import { SlideConstraint } from "../components/slide/slide-constraint";
 
 export default function View2() {
   return (
-    <SlideConstraint>
-      <div className="overflow-y-auto max-w-[140rem] mx-auto flex-1 px-4 pt-6 sm:px-6 pb-24 flex-col w-full flex h-full">
-        <GridTitle />
+    // <SlideConstraint>
+    //   <div className="overflow-y-auto max-w-[140rem] mx-auto flex-1 px-4 pt-6 sm:px-6 pb-24 flex-col w-full flex h-full">
+    //     <GridTitle />
 
-        <Grid>
-          <GridItem cols={1} rows={1}>
-            <GridItemCaption>Delphi Video</GridItemCaption>
+    //     <Grid>
+    //       <GridItem cols={1} rows={1}>
+    //         <GridItemCaption>Delphi Video</GridItemCaption>
 
-            <DemoLive />
-          </GridItem>
+    //         <DemoLive />
+    //       </GridItem>
 
-          <GridItem cols={2} rows={2}>
-            <GridItemCaption>Tailwind Labs</GridItemCaption>
-
-            <DemoPassport />
-          </GridItem>
+    //       <GridItem cols={2} rows={2}>
+    //         <GridItemCaption>Tailwind Labs</GridItemCaption>
+    <DemoPassport />
+  );
+  /* </GridItem>
 
           <GridItem cols={1} rows={2}>
             <GridItemCaption>Delphi Video</GridItemCaption>
@@ -51,6 +51,5 @@ export default function View2() {
 
         <div className="fixed pointer-events-auto inset-x-0 w-dvw h-[clamp(5rem,_10vh,_6rem)] z-50 backdrop-blur-sm bottom-0 [mask-image:linear-gradient(to_top,#000_25%,transparent)] before:content-[''] before:absolute before:inset-0 before:bg-[linear-gradient(to_top,var(--gray-1),transparent)]"></div>
       </div>
-    </SlideConstraint>
-  );
+    </SlideConstraint>*/
 }

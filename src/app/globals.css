@@ -178,28 +178,6 @@
     @apply font-sans bg-gray-1 text-gray-12;
   }
 
-  .draw {
-    & > path {
-      @apply stroke-current stroke-3;
-
-      stroke-dasharray: 1;
-      stroke-dashoffset: 1;
-    }
-
-    @media (prefers-reduced-motion: no-preference) {
-      & > path {
-        animation: draw 0.5s 3 calc(var(--stagger) * 0.5s) forwards;
-      }
-
-      & > path:first-child {
-        animation-timing-function: ease-out;
-      }
-
-      & > path:last-child {
-        animation-timing-function: ease-in-out;
-      }
-    }
-  }
 }
 
 @layer components {

@@ -9,7 +9,7 @@ import { PassportStroke } from "./PassportStroke";
 
 export function Passport() {
   return (
-    <div className="relative mx-auto size-fit rounded-3xl bg-gray-1  pointer-events-auto">
+    <div className="relative mx-auto size-fit rounded-3xl bg-gray-1 shadow-6 pointer-events-auto">
       <PassportContainer>
         <PassportGradient />
 
