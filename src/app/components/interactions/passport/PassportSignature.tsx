@@ -27,13 +27,6 @@ const pathVariants: Variants = {
     strokeWidth: 3,
     strokeDasharray: 1,
     strokeDashoffset: 0,
-    // transition: {
-    //   type: "spring",
-    //   bounce: 0,
-    //   stiffness: 100,
-    //   damping: 20,
-    //   mass: 0.8,
-    // },
   },
 };
 

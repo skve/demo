@@ -1,11 +1,10 @@
-import { Grid } from "../components/grid/grid";
-import { GridItem } from "../components/grid/grid-item";
-import { GridItemCaption } from "../components/grid/grid-item-caption";
-import { GridTitle } from "../components/grid/grid-title";
-import { DemoLive } from "../components/interactions/live/demo-live";
 import { DemoPassport } from "../components/interactions/passport/demo-passport";
-import { Signature } from "../components/signature";
 import { SlideConstraint } from "../components/slide/slide-constraint";
+import { DemoLive } from "../components/interactions/live/demo-live";
+import { GridTitle } from "../components/grid/grid-title";
+import { GridItem } from "../components/grid/grid-item";
+import { Signature } from "../components/signature";
+import { Grid } from "../components/grid/grid";
 
 export default function View2() {
   return (
@@ -15,32 +14,22 @@ export default function View2() {
 
         <Grid>
           <GridItem cols={1} rows={1}>
-            <GridItemCaption>Delphi Video</GridItemCaption>
-
             <DemoLive />
           </GridItem>
 
           <GridItem cols={2} rows={2}>
-            <GridItemCaption>Tailwind Labs</GridItemCaption>
-
             <DemoPassport />
           </GridItem>
 
           <GridItem cols={1} rows={2}>
-            <GridItemCaption>Delphi Video</GridItemCaption>
-
             <DemoLive />
           </GridItem>
 
           <GridItem cols={2} rows={2}>
-            <GridItemCaption>Delphi Video</GridItemCaption>
-
             <DemoLive />
           </GridItem>
 
           <GridItem cols={1} rows={1}>
-            <GridItemCaption>Delphi Video</GridItemCaption>
-
             <DemoLive />
           </GridItem>
         </Grid>
