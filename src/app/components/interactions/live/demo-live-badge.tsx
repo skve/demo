@@ -3,25 +3,25 @@
 import { motion } from "motion/react";
 import { useState, useEffect } from "react";
 
-export function LiveBadge({ isLive }: { isLive: boolean }) {
-  const [active, setActive] = useState(isLive);
+export function LiveBadge({ playback }: { playback: boolean }) {
+  const [active, setActive] = useState(playback);
 
   const DURATION = 0.8;
   const BG_COLOR_DURATION = 0.2;
 
   useEffect(() => {
     const interval = setInterval(() => {
-      if (!isLive) return;
+      if (!playback) return;
 
       setActive((prev) => !prev);
     }, 3000);
 
     return () => clearInterval(interval);
-  }, [isLive]);
+  }, [playback]);
 
   useEffect(() => {
-    setActive(isLive);
-  }, [isLive]);
+    setActive(playback);
+  }, [playback]);
 
   return (
     <motion.span
