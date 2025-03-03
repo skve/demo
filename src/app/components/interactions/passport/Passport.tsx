@@ -7,7 +7,7 @@ import { PassportFooter } from "./PassportFooter";
 import { PassportHeader } from "./PassportHeader";
 import { PassportStroke } from "./PassportStroke";
 
-export function Passport() {
+export function Passport({ animationKey }: { animationKey: number }) {
   return (
     <div className="relative mx-auto size-fit rounded-3xl bg-gray-1 shadow-6 pointer-events-auto">
       <PassportContainer>
@@ -16,7 +16,7 @@ export function Passport() {
         <PassportBackground>
           <PassportHeader />
           <PassportDetails />
-          <PassportSectional />
+          <PassportSectional animationKey={animationKey} />
           <PassportFooter />
         </PassportBackground>
       </PassportContainer>

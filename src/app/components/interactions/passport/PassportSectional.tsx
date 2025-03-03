@@ -4,7 +4,7 @@ import { PassportDetailsTitle } from "./PassportDetailsTitle";
 import { PassportSignature } from "./PassportSignature";
 import { Separator } from "./PassportSeparator";
 
-export function PassportSectional() {
+export function PassportSectional({ animationKey }: { animationKey: number }) {
   return (
     <section className="grid grid-cols-2 gap-4">
       <div className="flex gap-0.5">
@@ -16,7 +16,7 @@ export function PassportSectional() {
       </div>
 
       <div className="mt-1 flex flex-col gap-0.5">
-        <PassportSignature />
+        <PassportSignature key={animationKey} />
 
         <Separator />
 
