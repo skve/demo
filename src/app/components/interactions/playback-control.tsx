@@ -20,7 +20,6 @@ export function PlaybackControl({
   return (
     <div className="flex gap-4 p-6 w-full justify-center items-center">
       <motion.button
-        disabled={!checked}
         onClick={() => onCheckedChange(!checked)}
         whileTap={{ scale: 0.95 }}
         className="flex-none not-disabled:cursor-pointer not-disabled:hover:bg-teal-a3 focus:outline-0 focus-visible:ring-2 focus-visible:ring-teal-8 text-gray-9  not-disabled:hover:text-teal-12 transition-colors duration-150 ease-out rounded-md p-2"
