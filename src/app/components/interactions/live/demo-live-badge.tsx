@@ -1,21 +1,27 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { useState, useEffect } from "react";
 
-export function LiveBadge() {
-  const [active, setActive] = useState(false);
+export function LiveBadge({ isLive }: { isLive: boolean }) {
+  const [active, setActive] = useState(isLive);
 
   const DURATION = 0.8;
   const BG_COLOR_DURATION = 0.2;
 
   useEffect(() => {
     const interval = setInterval(() => {
+      if (!isLive) return;
+
       setActive((prev) => !prev);
     }, 3000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [isLive]);
+
+  useEffect(() => {
+    setActive(isLive);
+  }, [isLive]);
 
   return (
     <motion.span

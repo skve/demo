@@ -4,6 +4,8 @@ import { precomputedFlags, reactScanFlag } from "../flags";
 type Params = Promise<{ code: string }>;
 
 export async function ReactScan({ params }: { params: Params }) {
+  return null;
+  
   const { code } = await params;
 
   const scan = await reactScanFlag(code, precomputedFlags);
