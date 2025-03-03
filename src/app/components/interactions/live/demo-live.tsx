@@ -7,10 +7,10 @@ import { PlaybackControl } from "../playback-control";
 import { LiveBadge } from "./demo-live-badge";
 
 export function DemoLive() {
-  const [isLive, setIsLive] = useState(false);
+  const [playback, setPlayback] = useState(true);
 
-  const handleLiveChange = () => {
-    setIsLive((prev) => !prev);
+  const handlePlaybackChange = () => {
+    setPlayback((prev) => !prev);
   };
 
   return (
@@ -36,12 +36,12 @@ export function DemoLive() {
             </div>
           </div>
 
-          <LiveBadge isLive={isLive} />
+          <LiveBadge playback={playback} />
         </div>
       </div>
 
       <div className="flex w-full flex-none">
-        <PlaybackControl checked={isLive} onCheckedChange={handleLiveChange} />
+        <PlaybackControl checked={playback} onCheckedChange={handlePlaybackChange} />
       </div>
     </div>
   );
