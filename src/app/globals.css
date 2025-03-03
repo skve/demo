@@ -6,11 +6,10 @@
 @import "@radix-ui/colors/gray-dark.css" layer(base);
 @import "@radix-ui/colors/gray-dark-alpha.css" layer(base);
 
-@import "@radix-ui/colors/pink.css" layer(base);
-@import "@radix-ui/colors/pink-dark.css" layer(base);
-
-@import "@radix-ui/colors/amber.css" layer(base);
-@import "@radix-ui/colors/amber-dark.css" layer(base);
+@import "@radix-ui/colors/teal.css" layer(base);
+@import "@radix-ui/colors/teal-dark.css" layer(base);
+@import "@radix-ui/colors/teal-alpha.css" layer(base);
+@import "@radix-ui/colors/teal-dark-alpha.css" layer(base);
 
 @import "tailwindcss";
 
@@ -70,31 +69,31 @@
   --color-white-a11: var(--white-a11);
   --color-white-a12: var(--white-a12);
 
-  --color-pink-1: var(--pink-1);
-  --color-pink-2: var(--pink-2);
-  --color-pink-3: var(--pink-3);
-  --color-pink-4: var(--pink-4);
-  --color-pink-5: var(--pink-5);
-  --color-pink-6: var(--pink-6);
-  --color-pink-7: var(--pink-7);
-  --color-pink-8: var(--pink-8);
-  --color-pink-9: var(--pink-9);
-  --color-pink-10: var(--pink-10);
-  --color-pink-11: var(--pink-11);
-  --color-pink-12: var(--pink-12);
+  --color-teal-1: var(--teal-1);
+  --color-teal-2: var(--teal-2);
+  --color-teal-3: var(--teal-3);
+  --color-teal-4: var(--teal-4);
+  --color-teal-5: var(--teal-5);
+  --color-teal-6: var(--teal-6);
+  --color-teal-7: var(--teal-7);
+  --color-teal-8: var(--teal-8);
+  --color-teal-9: var(--teal-9);
+  --color-teal-10: var(--teal-10);
+  --color-teal-11: var(--teal-11);
+  --color-teal-12: var(--teal-12);
 
-  --color-amber-1: var(--amber-1);
-  --color-amber-2: var(--amber-2);
-  --color-amber-3: var(--amber-3);
-  --color-amber-4: var(--amber-4);
-  --color-amber-5: var(--amber-5);
-  --color-amber-6: var(--amber-6);
-  --color-amber-7: var(--amber-7);
-  --color-amber-8: var(--amber-8);
-  --color-amber-9: var(--amber-9);
-  --color-amber-10: var(--amber-10);
-  --color-amber-11: var(--amber-11);
-  --color-amber-12: var(--amber-12);
+  --color-teal-a1: var(--teal-a1);
+  --color-teal-a2: var(--teal-a2);
+  --color-teal-a3: var(--teal-a3);
+  --color-teal-a4: var(--teal-a4);
+  --color-teal-a5: var(--teal-a5);
+  --color-teal-a6: var(--teal-a6);
+  --color-teal-a7: var(--teal-a7);
+  --color-teal-a8: var(--teal-a8);
+  --color-teal-a9: var(--teal-a9);
+  --color-teal-a10: var(--teal-a10);
+  --color-teal-a11: var(--teal-a11);
+  --color-teal-a12: var(--teal-a12);
 
   --font-*: initial;
   --font-mono-system: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
@@ -113,7 +112,6 @@
   --shadow-4: var(--s-4);
   --shadow-5: var(--s-5);
   --shadow-6: var(--s-6);
-
 }
 
 @layer base {
@@ -164,7 +162,7 @@
 
 @layer components {
   ::selection {
-    @apply bg-pink-3 text-pink-9;
+    @apply bg-teal-a5;
   }
 }
 

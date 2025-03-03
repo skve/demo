@@ -23,7 +23,7 @@ export function RestartControl({ onRestart }: { onRestart: () => void }) {
         onClick={handleRestart}
         whileTap={{ scale: 0.95 }}
         className={cn(
-          "flex-none not-disabled:cursor-pointer not-disabled:hover:bg-gray-3 text-gray-9 transition-colors duration-150 ease-out rounded-md p-2",
+          "flex-none not-disabled:cursor-pointer not-disabled:hover:bg-teal-a3 focus:outline-0 focus-visible:ring-2 focus-visible:ring-teal-8 text-gray-9  not-disabled:hover:text-teal-12 transition-colors duration-150 ease-out rounded-md p-2",
         )}
       >
         <AnimatePresence mode="wait" initial={false}>
