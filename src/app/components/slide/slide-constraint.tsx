@@ -183,7 +183,7 @@ export function SlideConstraint({
           transition={buttonContainerTransition}
           animate={isStarted ? "animate" : "initial"}
           className={cn(
-            "bg-black-a4 flex z-50 flex-col inset-0 absolute w-full h-full  justify-center items-center",
+            "bg-black-a5 flex z-50 flex-col inset-0 absolute w-full h-full  justify-center items-center",
             isStarted && "pointer-events-none"
           )}
           layout
@@ -252,11 +252,11 @@ export function SlideConstraint({
           </div>
 
           <motion.div
-            className="w-[24rem] mt-8 h-14 backdrop-blur-xs flex flex-col items-start bg-black-a1"
+            className="w-[24rem] mt-8 h-14  flex flex-col items-start "
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
           >
-            <Signature className="text-gray-9" />
+            <Signature className="text-gray-10" />
           </motion.div>
         </motion.div>
 
@@ -293,7 +293,7 @@ export function SlideConstraint({
                 opacity: 0,
                 filter: "blur(10px)",
               }}
-              animate={{ opacity: 1, filter: "blur(2.25px)" }}
+              animate={{ opacity: 1, filter: "blur(4px)" }}
               exit={{
                 opacity: 0,
                 transition: {
@@ -310,8 +310,8 @@ export function SlideConstraint({
             >
               <div className="absolute inset-0 w-full h-full bg-black-a4 z-40" />
 
-              {/* <video
-                src="https://rmqdxpokhwuzn5kd.public.blob.vercel-storage.com/intro.mp4"
+              <video
+                src="https://rmqdxpokhwuzn5kd.public.blob.vercel-storage.com/final-ub27AIzLAbQDpYxHhgiLWbGlRuoz4q.mp4"
                 ref={videoRef}
                 autoPlay
                 muted
@@ -319,7 +319,7 @@ export function SlideConstraint({
                 preload="auto"
                 loop
                 className="w-full h-full object-cover z-30 [mask-image:linear-gradient(to_top,black_50%,transparent)]"
-              /> */}
+              />
             </motion.div>
           )}
         </AnimatePresence>
