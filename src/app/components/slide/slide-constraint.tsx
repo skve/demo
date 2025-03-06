@@ -3,7 +3,7 @@
 import { AnimatePresence, motion, Transition, Variants } from "motion/react";
 import { usePathname } from "next/navigation";
 import { useHotkeys } from "@mantine/hooks";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 
 import { PlayIcon } from "./parts/play-icon";
 
@@ -11,12 +11,12 @@ import { cn } from "@/lib/utils";
 
 const containerVariants: Variants = {
   initial: {
-    '--tw-ring-color': "var(--gray-3)",
+    "--tw-ring-color": "var(--gray-3)",
     borderRadius: "2rem",
     scale: 0.9,
   },
   animate: {
-    '--tw-ring-color': "var(--gray-1)",
+    "--tw-ring-color": "var(--gray-1)",
     borderRadius: "0",
     scale: 1,
   },
@@ -80,6 +80,7 @@ export function SlideConstraint({
 }) {
   const pathname = usePathname();
 
+  const videoRef = useRef<HTMLVideoElement>(null);
   const [isStarted, setIsStarted] = useState(false);
   const [publishHotkeyPress, setPublishHotkeyPress] = useState(false);
 
@@ -88,6 +89,15 @@ export function SlideConstraint({
 
     setIsStarted(true);
   }
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.muted = true;
+      videoRef.current.defaultMuted = true;
+      videoRef.current.loop = true;
+      videoRef.current.play();
+    }
+  }, [videoRef]);
 
   useHotkeys([
     [
@@ -127,7 +137,7 @@ export function SlideConstraint({
           transition={buttonContainerTransition}
           animate={isStarted ? "animate" : "initial"}
           className={cn(
-            "bg-black-a4 fle backdrop-blur-md z-50 inset-0 absolute w-full h-full flex justify-center items-center",
+            "bg-black-a4 flex z-50 inset-0 absolute w-full h-full  justify-center items-center",
             isStarted && "pointer-events-none"
           )}
           layout
@@ -157,13 +167,10 @@ export function SlideConstraint({
           </motion.button>
         </motion.div>
 
-        <AnimatePresence initial={false} mode="popLayout">
+        <AnimatePresence mode="popLayout">
           {isStarted ? (
             <motion.div
-              className={cn(
-                "flex origin-bottom w-full",
-                className
-              )}
+              className={cn("flex origin-bottom w-full", className)}
               initial={{
                 opacity: 0,
                 scale: 0.99,
@@ -185,7 +192,41 @@ export function SlideConstraint({
             >
               {children}
             </motion.div>
-          ) : null}
+          ) : (
+            <motion.div
+              className="flex origin-bottom w-full"
+              key="bg-video"
+              initial={{
+                opacity: 0,
+                filter: "blur(10px)",
+              }}
+              animate={{ opacity: 1, filter: "blur(2.25px)" }}
+              exit={{
+                opacity: 0,
+                transition: {
+                  duration: 0.5,
+                  ease: "easeOut",
+                },
+                filter: "blur(10px)",
+              }}
+              transition={{
+                duration: 1.75,
+                ease: "easeIn",
+                delay: 0.75,
+              }}
+            >
+              <video
+                src="https://rmqdxpokhwuzn5kd.public.blob.vercel-storage.com/intro.mp4"
+                ref={videoRef}
+                autoPlay
+                muted
+                playsInline
+                preload="auto"
+                loop
+                className="w-full h-full object-cover [mask-image:linear-gradient(to_top,black_50%,transparent)]"
+              />
+            </motion.div>
+          )}
         </AnimatePresence>
       </motion.div>
     </AnimatePresence>
