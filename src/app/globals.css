@@ -6,10 +6,21 @@
 @import "@radix-ui/colors/gray-dark.css" layer(base);
 @import "@radix-ui/colors/gray-dark-alpha.css" layer(base);
 
+
+@import "@radix-ui/colors/sand.css" layer(base);
+@import "@radix-ui/colors/sand-alpha.css" layer(base);
+@import "@radix-ui/colors/sand-dark.css" layer(base);
+@import "@radix-ui/colors/sand-dark-alpha.css" layer(base);
+
 @import "@radix-ui/colors/teal.css" layer(base);
 @import "@radix-ui/colors/teal-dark.css" layer(base);
 @import "@radix-ui/colors/teal-alpha.css" layer(base);
 @import "@radix-ui/colors/teal-dark-alpha.css" layer(base);
+
+@import "@radix-ui/colors/tomato.css" layer(base);
+@import "@radix-ui/colors/tomato-alpha.css" layer(base);
+@import "@radix-ui/colors/tomato-dark.css" layer(base);
+@import "@radix-ui/colors/tomato-dark-alpha.css" layer(base);
 
 @import "tailwindcss";
 
@@ -29,6 +40,19 @@
   --color-gray-10: var(--gray-10);
   --color-gray-11: var(--gray-11);
   --color-gray-12: var(--gray-12);
+
+  --color-sand-1: var(--sand-1);  
+  --color-sand-2: var(--sand-2);
+  --color-sand-3: var(--sand-3);
+  --color-sand-4: var(--sand-4);
+  --color-sand-5: var(--sand-5);
+  --color-sand-6: var(--sand-6);
+  --color-sand-7: var(--sand-7);
+  --color-sand-8: var(--sand-8);
+  --color-sand-9: var(--sand-9);
+  --color-sand-10: var(--sand-10);
+  --color-sand-11: var(--sand-11);
+  --color-sand-12: var(--sand-12);
 
   --color-gray-a1: var(--gray-a1);
   --color-gray-a2: var(--gray-a2);
@@ -94,6 +118,19 @@
   --color-teal-a10: var(--teal-a10);
   --color-teal-a11: var(--teal-a11);
   --color-teal-a12: var(--teal-a12);
+
+  --color-tomato-1: var(--tomato-1);
+  --color-tomato-2: var(--tomato-2);
+  --color-tomato-3: var(--tomato-3);
+  --color-tomato-4: var(--tomato-4);
+  --color-tomato-5: var(--tomato-5);
+  --color-tomato-6: var(--tomato-6);
+  --color-tomato-7: var(--tomato-7);
+  --color-tomato-8: var(--tomato-8);
+  --color-tomato-9: var(--tomato-9);
+  --color-tomato-10: var(--tomato-10);
+  --color-tomato-11: var(--tomato-11);
+  --color-tomato-12: var(--tomato-12);
 
   --font-*: initial;
   --font-mono-system: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,

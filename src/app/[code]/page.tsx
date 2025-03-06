@@ -21,10 +21,6 @@ export default function View2() {
             <DemoPassport />
           </GridItem>
 
-          <GridItem cols={2} rows={2}>
-            <DemoPassport />
-          </GridItem>
-
 
         </Grid>
 
