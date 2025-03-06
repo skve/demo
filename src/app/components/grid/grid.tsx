@@ -22,7 +22,7 @@ export function Grid({ children }: { children: React.ReactNode }) {
   const REM = 16;
 
   const BREAKPOINT = 40;
-  const ROW_HEIGHT = 16;
+  const ROW_HEIGHT = 20;
 
   useEffect(() => {
     const handleResize = () => {

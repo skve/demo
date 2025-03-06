@@ -21,6 +21,11 @@ export default function View2() {
             <DemoPassport />
           </GridItem>
 
+          <GridItem cols={2} rows={2}>
+            <DemoPassport />
+          </GridItem>
+
+
         </Grid>
 
         <div className="flex mt-24 justify-center items-center flex-none">
