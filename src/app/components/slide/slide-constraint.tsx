@@ -8,6 +8,7 @@ import { useState, useRef, useEffect } from "react";
 import { PlayIcon } from "./parts/play-icon";
 
 import { cn } from "@/lib/utils";
+import { Signature } from "../signature";
 
 const containerVariants: Variants = {
   initial: {
@@ -32,6 +33,11 @@ const buttonContainerVariants: Variants = {
 };
 
 const buttonVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    y: 10,
+    filter: "blur(1px)",
+  },
   initial: {
     opacity: 1,
     filter: "blur(0px)",
@@ -58,6 +64,7 @@ const buttonContainerTransition: Transition = {
 
 const buttonTransition: Transition = {
   ...transitionBasis,
+  delay: 1.75,
   mass: 0.1,
 };
 
@@ -69,6 +76,45 @@ const transition: Transition = {
   mass: 1.2,
 
   ease: "easeInOut",
+};
+
+const titleContainerVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      delay: 0.4,
+      duration: 0.15,
+      when: "beforeChildren",
+      staggerChildren: 0.2,
+    },
+  },
+};
+
+const titleChildVariants: Variants = {
+  hidden: { opacity: 0, y: "20%", filter: "blur(10px)" },
+  visible: {
+    opacity: 1,
+    y: 0,
+    filter: "blur(0px)",
+    transition: {
+      duration: 1.15,
+      ease: [0.25, 0.1, 0.25, 1],
+    },
+  },
+};
+
+const copyChildVariants: Variants = {
+  hidden: { opacity: 0, y: "3%", filter: "blur(7px)" },
+  visible: {
+    opacity: 1,
+    y: 0,
+    filter: "blur(0px)",
+    transition: {
+      duration: 0.8,
+      ease: [0.25, 0.1, 0.25, 1],
+    },
+  },
 };
 
 export function SlideConstraint({
@@ -137,34 +183,81 @@ export function SlideConstraint({
           transition={buttonContainerTransition}
           animate={isStarted ? "animate" : "initial"}
           className={cn(
-            "bg-black-a4 flex z-50 inset-0 absolute w-full h-full  justify-center items-center",
+            "bg-black-a4 flex z-50 flex-col inset-0 absolute w-full h-full  justify-center items-center",
             isStarted && "pointer-events-none"
           )}
           layout
         >
-          <motion.button
-            whileTap={{ scale: 0.92 }}
-            transition={buttonTransition}
-            onClick={handleStart}
-            variants={buttonVariants}
-            initial="initial"
-            animate={
-              isStarted
-                ? "animate"
-                : publishHotkeyPress
-                ? { scale: 0.92 }
-                : "initial"
-            }
-            layout
-            className="bg-gray-3 hover:bg-gray-4 hover:[&>kbd]:bg-gray-7 focus:outline-0 h-10 focus-visible:ring-2 focus-visible:ring-teal-8 focus-visible:ring-offset-4 focus-visible:ring-offset-gray-1 text-gray-12 flex gap-1.5 items-center justify-center transition-colors duration-200 rounded-lg px-4 py-1.5 shadow-3"
-          >
-            <PlayIcon className="size-4 flex-none" />
-            <span className="text-base font-medium pl-1">Start Demo</span>
+          <div className="flex w-[24rem] flex-col gap-2 z-50">
+            <motion.hgroup
+              className="font-medium mb-6 flex flex-col text-start w-full tracking-tight"
+              initial="hidden"
+              animate="visible"
+              variants={titleContainerVariants}
+            >
+              <div className="flex flex-col gap-0">
+                <motion.h2
+                  className="font-medium text-2xl tracking-tight  text-gray-12"
+                  variants={titleChildVariants}
+                >
+                  Luke Shiels
+                </motion.h2>
 
-            <kbd className="size-5 font-medium relative left-1 flex-none flex rounded text-sm transition-colors duration-200 justify-center items-center text-gray-12 bg-gray-6">
-              P
-            </kbd>
-          </motion.button>
+                <motion.h2
+                  className="font-medium text-lg relative  tracking-tight bottom-0.5 text-gray-11"
+                  variants={titleChildVariants}
+                >
+                  Selected Works
+                </motion.h2>
+              </div>
+
+              <motion.p
+                className="font-medium mt-3 text-base text-gray-12"
+                variants={copyChildVariants}
+              >
+                A curated selection of high-fidelity micro-interactions and
+                animations designed for seamless and intuitive experiences with
+                a focus on enhancing usability and engagement through refined
+                execution.
+
+              </motion.p>
+            </motion.hgroup>
+          </div>
+
+          <div className="w-[24rem] mt-0 h-16">
+            <motion.button
+              whileTap={{ scale: 0.92 }}
+              transition={buttonTransition}
+              onClick={handleStart}
+              variants={buttonVariants}
+              initial="hidden"
+              animate={
+                isStarted
+                  ? "animate"
+                  : publishHotkeyPress
+                  ? { scale: 0.92 }
+                  : "initial"
+              }
+              layout
+              className="bg-gray-3 hover:bg-gray-4 hover:[&>kbd]:bg-gray-7 focus:outline-0 h-10 focus-visible:ring-2 focus-visible:ring-teal-8 focus-visible:ring-offset-4 focus-visible:ring-offset-gray-1 text-gray-12 flex gap-1.5 items-center justify-center transition-colors duration-200 rounded-lg px-4 py-1.5 shadow-3"
+            >
+              <PlayIcon className="size-4 flex-none" />
+              <span className="text-base font-medium pl-1">Start Demo</span>
+
+              <kbd className="size-5 font-medium relative left-1 flex-none flex rounded text-sm transition-colors duration-200 justify-center items-center text-gray-12 bg-gray-6">
+                P
+              </kbd>
+            </motion.button>
+
+          </div>
+
+          <motion.div
+            className="w-[24rem] mt-8 h-14 backdrop-blur-xs flex flex-col items-start bg-black-a1"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+          >
+            <Signature className="text-gray-9" />
+          </motion.div>
         </motion.div>
 
         <AnimatePresence mode="popLayout">
@@ -215,7 +308,9 @@ export function SlideConstraint({
                 delay: 0.75,
               }}
             >
-              <video
+              <div className="absolute inset-0 w-full h-full bg-black-a4 z-40" />
+
+              {/* <video
                 src="https://rmqdxpokhwuzn5kd.public.blob.vercel-storage.com/intro.mp4"
                 ref={videoRef}
                 autoPlay
@@ -223,8 +318,8 @@ export function SlideConstraint({
                 playsInline
                 preload="auto"
                 loop
-                className="w-full h-full object-cover [mask-image:linear-gradient(to_top,black_50%,transparent)]"
-              />
+                className="w-full h-full object-cover z-30 [mask-image:linear-gradient(to_top,black_50%,transparent)]"
+              /> */}
             </motion.div>
           )}
         </AnimatePresence>

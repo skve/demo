@@ -1,5 +1,6 @@
 "use client";
 
+import { cn } from "@/lib/utils";
 import { motion, Variants } from "motion/react";
 
 const containerVariants: Variants = {
@@ -29,7 +30,7 @@ const pathVariants: Variants = {
   },
 };
 
-export function Signature() {
+export function Signature({ className }: { className?: string }) {
   return (
     <motion.svg
       variants={containerVariants}
@@ -47,7 +48,7 @@ export function Signature() {
       viewport={{ once: true }}
       stroke="currentColor"
       strokeLinecap="round"
-      className="text-gray-7"
+      className={cn("text-gray-7", className)}
       xmlns="http://www.w3.org/2000/svg"
     >
       <motion.path
