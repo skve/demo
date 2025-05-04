@@ -9,6 +9,7 @@ import { PlayIcon } from "./parts/play-icon";
 
 import { cn } from "@/lib/utils";
 import { Signature } from "../signature";
+import { Join } from "./parts/vercel";
 
 const containerVariants: Variants = {
   initial: {
@@ -195,12 +196,12 @@ export function SlideConstraint({
               animate="visible"
               variants={titleContainerVariants}
             >
-              <div className="flex flex-col gap-0">
+              <div className="flex flex-col gap-0.5">
                 <motion.h2
-                  className="font-medium text-2xl tracking-tight  text-gray-12"
+                  className="font-medium text-2xl tracking-tight text-gray-12"
                   variants={titleChildVariants}
                 >
-                  Luke Shiels
+                  Luke Shiels <Join />
                 </motion.h2>
 
                 <motion.h2
