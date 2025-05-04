@@ -1,4 +1,4 @@
- function Vercel() {
+function Vercel() {
   return (
     <svg
       height="20"
@@ -37,10 +37,10 @@ function Plus() {
 }
 
 export function Join() {
-    return (
-        <span className="opacity-90 inline-flex align-middle items-center gap-2 ml-0.5">
-            <Plus />
-            <Vercel />
-        </span>
-    )
+  return (
+    <span className="opacity-90 inline-flex align-middle items-center gap-2 ml-0.5">
+      <Plus />
+      <Vercel />
+    </span>
+  );
 }
