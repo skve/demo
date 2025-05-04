@@ -1,10 +1,10 @@
-import { DemoPassport } from "../components/interactions/passport/demo-passport";
-import { SlideConstraint } from "../components/slide/slide-constraint";
-import { DemoLive } from "../components/interactions/live/demo-live";
-import { GridTitle } from "../components/grid/grid-title";
-import { GridItem } from "../components/grid/grid-item";
-import { Signature } from "../components/signature";
-import { Grid } from "../components/grid/grid";
+import { DemoPassport } from "./components/interactions/passport/demo-passport";
+import { SlideConstraint } from "./components/slide/slide-constraint";
+import { DemoLive } from "./components/interactions/live/demo-live";
+import { GridTitle } from "./components/grid/grid-title";
+import { GridItem } from "./components/grid/grid-item";
+import { Signature } from "./components/signature";
+import { Grid } from "./components/grid/grid";
 
 export default function View2() {
   return (
