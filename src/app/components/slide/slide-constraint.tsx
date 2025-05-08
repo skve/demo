@@ -217,10 +217,7 @@ export function SlideConstraint({
                 variants={copyChildVariants}
               >
                 A curated selection of high-fidelity micro-interactions and
-                animations designed for seamless and intuitive experiences with
-                a focus on enhancing usability and engagement through refined
-                execution.
-
+                animations.
               </motion.p>
             </motion.hgroup>
           </div>
@@ -249,7 +246,6 @@ export function SlideConstraint({
                 P
               </kbd>
             </motion.button>
-
           </div>
 
           <motion.div
